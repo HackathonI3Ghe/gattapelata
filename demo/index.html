@@ -6,6 +6,9 @@
 <meta name="theme-color" content="#0b0e16">
 <meta name="color-scheme" content="dark">
 <meta name="description" content="Passo Sicuro: non vi diciamo se arriva una macchina, vi diciamo se fate in tempo.">
+<meta property="og:title" content="Passo Sicuro">
+<meta property="og:description" content="Non vi diciamo se arriva una macchina. Vi diciamo se fate in tempo.">
+<meta property="og:type" content="website">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -236,6 +239,7 @@
   }
   .regia:hover, .regia:focus-within { opacity: 1; }
   .regia span { padding: 0 6px; }
+  .regia kbd { font: inherit; font-weight: 700; color: #fff; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.25); border-bottom-width: 2px; border-radius: 5px; padding: 0 5px; }
   .regia button { font: inherit; font-weight: 700; background: rgba(255,255,255,.08); color: #fff; border: 1px solid rgba(255,255,255,.16); border-radius: 9px; padding: 6px 10px; cursor: pointer; }
   .regia button:hover { background: rgba(255,255,255,.18); }
 
@@ -454,7 +458,7 @@
   <button id="bRiavvia" type="button">↺ Riavvia</button>
   <button id="bVoce" type="button"></button>
   <button id="bCamera" type="button">📷 Fotocamera</button>
-  <span>Spazio = avanti · R = riavvia · M = voce · C = fotocamera</span>
+  <span><kbd>Spazio</kbd> avanti · <kbd>R</kbd> riavvia · <kbd>M</kbd> voce · <kbd>C</kbd> fotocamera</span>
 </div>
 
 <script>
