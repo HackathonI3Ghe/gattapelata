@@ -131,6 +131,7 @@
   .confronto .auto b { color: #fff; }
   .confronto .tu, .confronto .tu b { color: #000; }
   @keyframes riempi { from { transform: scaleX(0); } }
+  @keyframes comparsa { from { opacity: 0; transform: translateY(14px) scale(.97); } }
   .screen.rosso .sub b { color: #fff; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
   .btn-main {
     position: relative; flex: 1 1 auto; min-height: 180px; border: none; border-radius: 34px;
@@ -176,6 +177,11 @@
     .sms:not([hidden]) { animation: entra .55s cubic-bezier(.2,.9,.3,1.25) both; }
     .confronto .riga i { animation: riempi .9s cubic-bezier(.2,.8,.2,1) both; }
     .confronto .tu i { animation-delay: .25s; }
+    .screen.anim .big, .screen.anim .sub, .screen.anim .btn-main { animation: comparsa .4s cubic-bezier(.2,.8,.2,1) backwards; }
+    .screen.anim .sub { animation-delay: .08s; }
+    .screen.anim .btn-main { animation-delay: .14s; }
+    .screen.anim.rosso .big.enorme { animation: comparsa .4s cubic-bezier(.2,.8,.2,1) backwards, battito 1s ease-in-out .4s infinite; }
+    .screen.anim.verde .big.enorme { animation: comparsa .4s cubic-bezier(.2,.8,.2,1) backwards, battito 1.6s ease-in-out .4s infinite; }
   }
 
   /* ---------- Strada (Livello 2: hardware, simulato) ---------- */
@@ -450,6 +456,7 @@ function fermaTimer() { timers.forEach(clearTimeout); timers = []; }
 // ---------- Schermo del telefono ----------
 function ui({ bg = "", cam = null, big = "", enorme = false, sub = "", start = false, sms = false, progress = false } = {}) {
   screen.className = "screen" + (bg ? " " + bg : "") + (cam ? "" : " centro");
+  void screen.offsetWidth; screen.classList.add("anim");
   $("cam").hidden = !cam;
   if (cam) $("camlabel").textContent = cam;
   $("big").innerHTML = big;
