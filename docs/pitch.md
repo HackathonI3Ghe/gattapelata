@@ -1,6 +1,6 @@
 # Pitch di Passo Sicuro
 
-**Durata proposta:** 7 minuti, inclusa demo del telefono sotto i 60 secondi e animazione indossabile di circa 30 secondi. Nome provvisorio: Team Passo Sicuro, da confermare.
+**Durata proposta:** 7 minuti, inclusa demo del telefono sotto i 60 secondi e presentazione del concept indossabile. Nome provvisorio: Team Passo Sicuro, da confermare.
 
 | # | Slide | Messaggio |
 |---|---|---|
@@ -14,7 +14,7 @@
 | 8 | Demo live | Lampeggiante, semaforo e SMS simulati. |
 | 9 | Facilità d'uso | Un pulsante, voce, mani libere; installazione assistita. |
 | 10 | Alternativa al telefono | Dispositivo sul petto, una camera, computer, batteria, voce e vibrazione. Solo fase 2. |
-| 11 | Efficacia | Scenario condizionato: −5% dei 342 decessi equivale a circa 17 vite/anno. Ipotesi non validata. Obiettivo del pilota: −15% di conflitti per 1.000 attraversamenti rispetto ai siti di confronto. |
+| 11 | Efficacia | Obiettivo aspirazionale a regime: 330 vite salvate/anno su una baseline di 342, equivalente al 96,5% di riduzione. Non è una previsione validata né un risultato ottenuto; richiede copertura e affidabilità ancora da dimostrare. Obiettivo del pilota: −15% di conflitti per 1.000 attraversamenti rispetto ai siti di confronto. |
 | 12 | Tempi | Telefono a T+90'; poi sviluppo e prove, pilota su 100 persone, fino a 1.000 utenti solo dopo validazione. |
 | 13 | Privacy | Immagini non conservate; proposta eventi minimi 30 giorni, aggregati mensili per 48 mesi. Da motivare nella progettazione privacy. |
 | 14 | Offerta | € 10 milioni in 48 mesi; infrastruttura € 1,24 milioni incluse riserve, 12,4%. Dispositivo stimato € 350; pilota € 250.000 già incluso. |
@@ -25,9 +25,8 @@
 
 «Oggi partiamo dal telefono: possiamo attivare il canale in 90 minuti. Nella fase 2 proponiamo Passo Sicuro da indossare: un piccolo dispositivo sul petto, con un solo pulsante, che osserva la strada e dà avvisi con voce e vibrazione. La prima versione chiede di guardare a sinistra e a destra; non vede a 360°. Nessuno schermo da leggere, nessun telefono da gestire. Prima lo proviamo con 100 persone in condizioni controllate, poi lo estendiamo se supera le prove. Budget del pilota: 250.000 euro, incluso nell'offerta.»
 
-La pagina animata illustra il concetto, non un dispositivo già costruito o validato. Gli avvisi sono simulati; non si usa per attraversare davvero.
+L’immagine nella slide illustra un concept di prodotto generato con IA, non un dispositivo già costruito o validato. Gli avvisi descritti sono parte della proposta.
 
-- Concept indossabile: https://hackathoni3ghe.github.io/gattapelata/indossabile/
 - Demo telefono: https://hackathoni3ghe.github.io/gattapelata/
 - Slide: https://hackathoni3ghe.github.io/gattapelata/slides/
 
