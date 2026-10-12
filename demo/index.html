@@ -177,6 +177,7 @@
     .sms:not([hidden]) { animation: entra .55s cubic-bezier(.2,.9,.3,1.25) both; }
     .confronto .riga i { animation: riempi .9s cubic-bezier(.2,.8,.2,1) both; }
     .confronto .tu i { animation-delay: .25s; }
+    .coda { animation: coda 1.8s ease-in-out infinite; }
     .screen.anim .big, .screen.anim .sub, .screen.anim .btn-main { animation: comparsa .4s cubic-bezier(.2,.8,.2,1) backwards; }
     .screen.anim .sub { animation-delay: .08s; }
     .screen.anim .btn-main { animation-delay: .14s; }
@@ -205,6 +206,8 @@
   .blink { animation: blink .5s steps(1) infinite; }
   @keyframes blink { 50% { opacity: .12; } }
   .onda { animation: onda 1.2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+  .coda { transform-box: fill-box; transform-origin: 0% 100%; }
+  @keyframes coda { 50% { transform: rotate(-16deg); } }
   @keyframes onda { 0% { opacity: .9; transform: scale(.4); } 100% { opacity: 0; transform: scale(1.6); } }
 
   /* ---------- Regia (per chi presenta) ---------- */
@@ -322,6 +325,17 @@
     <g clip-path="url(#scena)">
     <rect x="0" y="0" width="600" height="100" fill="url(#muroSu)"/>
     <g id="finestre"></g>
+    <!-- la gatta pelata di Gattapelata, sul davanzale -->
+    <g transform="translate(421 75) scale(1.5)">
+      <title>Isidoro Miciomanno controlla che si arrivi vivi dall'altra parte</title>
+      <path class="coda" d="M4 -1 C 10 -1, 11 -7, 8 -10" fill="none" stroke="#dcae9e" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="0" cy="-5" rx="5.2" ry="5.6" fill="#e9bfae"/>
+      <circle cx="0" cy="-12.2" r="4.2" fill="#e9bfae"/>
+      <path d="M-3.9 -14 L-5 -20 L-.8 -15.6 Z M3.9 -14 L5 -20 L.8 -15.6 Z" fill="#e9bfae"/>
+      <path d="M-3.6 -15 L-4.2 -18.4 L-1.8 -15.8 Z M3.6 -15 L4.2 -18.4 L1.8 -15.8 Z" fill="#c98f80"/>
+      <circle cx="-1.6" cy="-12.6" r=".75" fill="#2b2b2b"/><circle cx="1.6" cy="-12.6" r=".75" fill="#2b2b2b"/>
+      <path d="M-.6 -11 L.6 -11 L0 -10.3 Z" fill="#c98f80"/>
+    </g>
     <rect x="80" y="4" width="440" height="20" rx="10" fill="rgba(0,0,0,.5)"/>
     <text x="300" y="18" fill="#fff" font-size="14" text-anchor="middle" font-family="Arial, sans-serif">Centro storico di Gattapelata · vicolo con strisce esistenti</text>
     <rect x="0" y="100" width="600" height="20" fill="#b9b2a6"/>
