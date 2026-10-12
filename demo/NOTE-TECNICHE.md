@@ -82,3 +82,13 @@ Distribuzione dei porta-telefono al collo: in parallelo, non blocca l'avvio.
 - Il file è generato dai sorgenti delle slide tenuti dalla Persona A: **non modificarlo a mano**, verrebbe sovrascritto.
 - Segnaposto ancora aperti: `[NOME TEAM]` (copertina, chiusura), `[__]` vite salvate all'anno (efficacia), conservazione dei contatori (privacy), tutti gli importi `[€__]` (offerta), dichiarazioni dei requisiti Art. 4. **Persona B:** metti numeri e testi in `docs/offerta-economica.md`, `docs/relazione-tecnica.md` e `docs/pitch.md`; fino alle 19:40 le slide vengono riallineate a quei file ogni 5 minuti.
 - Prova eseguita: generazione delle 15 slide e resa in Chrome (senza interfaccia) delle slide 7 e 13, OK. Non provate: proiettore di sala, stampa in PDF.
+
+## Restyling grafico della demo (12/10/2026, 19:20-19:30)
+
+- Cambia solo l'aspetto: nessuna nuova funzione, logica JS invariata. Unica modifica JS: il disegno delle finestre con persiane nella scena della strada.
+- Carattere **Atkinson Hyperlegible** (Braille Institute, pensato per chi vede poco), da Google Fonts con ripiego sui caratteri di sistema se la rete manca. Spunto per la relazione (§2, facilità d'uso).
+- Telefono: logo "Passo Sicuro" (pedone con bastone sulle strisce), mirino e linea di scansione sulla fotocamera, etichetta **"Immagine simulata"** nella vista simulata (sparisce con la fotocamera vera), pulsante ATTRAVERSO con icona e anello pulsante, schermate ASPETTA/VAI con sfumature e battito, barra di avanzamento a strisce, SMS come notifica.
+- Corretto: su telefono il lampeggio della fase VAI non si vedeva (l'ombra interna restava sotto lo schermo). Ora è un bordo bianco/giallo sopra lo schermo, anche su desktop.
+- Su schermi molto stretti i testi principali si riducono in proporzione (minimo 24 px, tranne la barra del nome). Le animazioni decorative si spengono con "riduci movimento"; il lampeggio resta.
+- Lato strada: intestazione con logo e slogan, scena con colori da centro storico, schede che si illuminano quando l'hardware è attivo. Su desktop il telefono resta sempre interamente visibile.
+- Prove: `node --check` OK; i 40 id usati dal JS sono presenti; stati iniziale, fotocamera, ASPETTA, VAI e arrivo visti a 360 e 412 px (iframe in Chrome) e su desktop, senza testo tagliato. NON VERIFICATO: telefono reale, Safari iOS, voce con audio.
