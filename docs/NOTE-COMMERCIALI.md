@@ -13,3 +13,5 @@ Fonti primarie: Raspberry Pi, Twilio Italia, AWS Lightsail e comparatore RRFB US
 Prove aritmetiche ripetute dopo merge: coefficienti, subtotali, BOM, riserva, riclassificazioni, pilota, TCO, SMS e sensibilità. R&D una volta sola, ricambi e formazione non duplicati. Resa browser e telefono non provate in questo task economico. Slide da riallineare conservando le 16 principali e i due approfondimenti (18 totali), il concept del collega e le correzioni di contenuto.
 
 Dopo il rebase: somme e attribuzioni ripetute con Decimal, confermate; preservati i contenuti tecnici del collega. Proposta €3,43M, prezzo tecnico completo prudenziale €2,665M, massimo con riserva totale €2,7675M.
+
+Rapporto di revisione economica rigenerato con riferimenti alle righe del modello e dei documenti dopo integrazione del collega; verifiche aritmetiche confermate.
