@@ -169,3 +169,13 @@ NON VERIFICATO in questo task: browser disponibile (inventario vuoto e browser i
 Massimo prudenziale per il confronto prezzo €3,92M (39,2%), qualora tutta la riserva residua €700k serva alla messa in opera; €3,22M è il costo programmato completo, non un prezzo garantito. Importo totale massimo sempre €10M.
 
 Verifica indipendente della tabella HTML contro costi.json: somme e attribuzioni corrette; 18 ID univoci e asset esistente. Per pubblicazione applicata hackathon-review. Nessuna nuova prova di applicazione, audio o telefono reale.
+
+### Verifica nel browser dopo i fix trasversali (20:36, commit 7af1f39 pubblicato)
+
+- Chrome desktop su Windows, sito pubblicato: flusso completo a voce spenta in **27,5 s**; contatore "Avvisi di attesa: 1" e cruscotto 1/1 a fine flusso; Riavvia azzera.
+- Fotocamera con flusso video finto (canvas al posto di `getUserMedia`, sito pubblicato): modello caricato. Senza veicoli la schermata è "Nessun veicolo rilevato · Non significa strada libera", con fondo neutro (non verde) e bollino "Immagine simulata" nascosto. Alla chiusura le tracce si fermano e il video viene rimosso. Nessun errore JS.
+- Layout (iframe in Chrome):
+  - 1280×720, 1366×768, 1536×730, 1536×864 e 1920×1080, passi 0, 1, 6 e 7: nessuno scorrimento, schede sempre sopra la regia, prima fila di schede fissa a 102 px (nessun salto al VAI);
+  - 360 e 412 px: nessun overflow, riga gialla "A te servono 7 s" leggibile da subito.
+- Revisione indipendente delle regressioni (subagente, Edge headless): nessun difetto bloccante. Markup bilanciato, nessun id duplicato, tempi per passo identici all'originale. I 2 difetti minori sono corretti in 7af1f39.
+- **NON VERIFICATO:** telefono reale, Safari iOS, voce con audio, riconoscimento di veicoli veri.
