@@ -43,7 +43,7 @@ La proposta personalizza il confronto dei tempi; non rivendica brevetti, unicit�
 | App sui telefoni personali | Sviluppo, esercizio, onboarding e validazione del perimetro app | Assistenza contestuale candidata; dipende da telefono e visuale |
 | App più hardware mirato | Costo incrementale completo per sito e manutenzione | Serve anche utenti senza app sui siti attrezzati; beneficio incrementale da provare |
 
-Non ci sono preventivi comparabili: non dichiariamo di essere i più economici. Preferire l'opzione meno costosa che soddisfa i requisiti e dimostra beneficio nel sito; non confrontare il dispositivo da €350 con un servizio completo.
+Non ci sono preventivi comparabili: non dichiariamo di essere i più economici. Preferire l'opzione meno costosa che soddisfa i requisiti e dimostra beneficio nel sito; non confrontare il dispositivo da €300 con un servizio completo.
 
 ## 4. Attivazione, gestione e rischi (10 punti)
 
@@ -61,7 +61,7 @@ Il bando richiede una soluzione in funzione, non soltanto un URL. Il piano non d
 
 ### Servizio proposto per 48 mesi
 
-Budget e unità di prestazione in [offerta-economica.md](offerta-economica.md). Obiettivi da contrattualizzare e collaudare: monitoraggio tecnico automatico 24/7; assistenza lunedì–venerdì 9–18; presa in carico dei guasti bloccanti entro 4 ore di servizio e ripristino o alternativa concordata entro 8 ore di servizio. Nessuna centrale di soccorso 24/7 inclusa. Report mensile di disponibilità, tempi di risposta, interventi, ricambi e costo maturato. Sono obiettivi proposti, non SLA già operativi.
+Proposta economica aggiornata: € 3.430.000 IVA esclusa sui 48 mesi, con € 450.120 di riserva. Esercizio € 603.000, cloud € 14.400 e SMS opzionali fino a € 144.480, separati. Budget e unità di prestazione in [offerta-economica.md](offerta-economica.md) e [costi.json](costi.json). Obiettivi da contrattualizzare e collaudare: monitoraggio tecnico automatico 24/7; assistenza lunedì–venerdì 9–18; presa in carico dei guasti bloccanti entro 4 ore di servizio e ripristino o alternativa concordata entro 8 ore di servizio. Nessuna centrale di soccorso 24/7 inclusa. Report mensile di disponibilità, tempi di risposta, interventi, ricambi e costo maturato. Sono obiettivi proposti, non SLA già operativi.
 
 Manutenzione: aggiornamenti, regressioni software, controllo delle dipendenze, verifiche dei sensori, sostituzioni e batterie entro i plafond dichiarati. Per ogni sito verificare compatibilità e costo completo prima dell'ordine; non modificare un impianto incompatibile per rientrare in un prezzo artificiale. Ritirare dalla sperimentazione configurazioni che non superano le prove.
 
@@ -89,3 +89,7 @@ Demo HTML statica transitoria su HTTPS, senza backend. React/Vite è una scelta 
 In esercizio servono servizi separati per telemetria e integrazioni: autorizzazione delle richieste, controllo delle fasi semaforiche, monitoraggio e accordi col gestore. Nessuna connessione che permetta all'app di cambiare liberamente il semaforo. Il lampeggiante con sensore opera indipendentemente dal telefono. Queste integrazioni non sono realizzate nella demo.
 
 Prove precedenti in `demo/NOTE-TECNICHE.md`: simulazione desktop senza voce in 27,5 secondi e viewport emulate. Non sostituiscono telefono reale, audio, prove con anziani, affidabilità stradale o dimostrazione in sala entro le 20:00. Dichiarazioni Art. 4 e preventivi restano da produrre.
+
+## 7. Dimensionamento economico aggiornato
+
+Capacità di piano: 5.000 beneficiari complessivi, fino a 1.000 con indossabile in fase 2, 100 strisce e 50 semafori esistenti. Sono massimi da verificare, non quantità da acquistare automaticamente. Importo massimo stimato € 3.430.000 IVA esclusa per 48 mesi, distinto dalla base d’asta € 10 milioni; riserva € 450.120 inclusa. Pilota € 224.000 incluso, hardware € 300/unità esclusi sviluppo e servizio. Costo completo prudenziale € 2.665.000, includendo anche sviluppo e manutenzione necessari; massimo € 2.767.500 se tutta la riserva residua serve alla messa in opera. Riclassificazioni del totale, non costi aggiuntivi. Preventivi, compatibilità, classificazione e progettazione da confermare.

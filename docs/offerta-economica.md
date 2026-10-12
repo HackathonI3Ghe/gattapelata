@@ -1,84 +1,248 @@
-# Offerta economica proposta per Passo Sicuro
+# Offerta economica stimata per Passo Sicuro
 
-**Base d'asta:** € 10.000.000 IVA esclusa. **Importo massimo della proposta:** € 10.000.000 IVA esclusa sui 48 mesi, con prestazioni rendicontate e tranche autorizzate. Non è una spesa automatica: le riserve e le estensioni non utilizzate non maturano corrispettivi. Il ribasso definitivo richiede preventivi e volumi verificati, oggi assenti.
+**Base d'asta: 10.000.000 €. Importo proposto: 3.430.000 € IVA esclusa, per 48 mesi.**
 
-Stime di pianificazione, non preventivi di fornitori. Quantità da confermare con popolazione e attraversamenti esistenti. A T+90' è previsto il canale web con prerequisiti e prove; la piena operatività stradale richiesta dal bando resta da validare. L'hardware richiede sviluppo, prove e installazioni successive.
+Importo massimo stimato per il perimetro assunto, da confermare prima dell'offerta definitiva; prestazioni per tranche e consumi a rendiconto. La proposta deriva da quantità e attività, anziché assorbire tutta la base d'asta. La differenza di **6.570.000 €**, pari al **65,7%**, resta fuori dall'offerta: non è una riserva del progetto né un risparmio già conseguito. Il bando non fornisce una formula che permetta di attribuirci un punteggio prezzo.
 
-| Voce | Quantità e criterio di stima | Importo IVA esclusa |
+Tutti gli importi di offerta sono **stime parametriche**, non preventivi ricevuti o prezzi contrattualmente accettati. I riferimenti di mercato in fondo aiutano a stabilire l'ordine di grandezza; le tariffe di lavoro, l'integrazione semaforica e il prodotto indossabile richiedono preventivi. Gli arrotondamenti di pianificazione non implicano accuratezza al singolo euro.
+
+## Perimetro assunto
+
+- Capacità di piano: 5.000 beneficiari complessivi, di cui fino a 1.000 passano all'indossabile dopo validazione. Non è un censimento della popolazione del Comune.
+- 100 attraversamenti con strisce e 50 impianti semaforici **già esistenti**, da selezionare dopo ricognizione. Nessuna nuova opera stradale.
+- 1.200 indossabili: 1.000 assegnati e 200 ricambi, inclusi una sola volta. Primo pilota su 100 persone con 20 ricambi.
+- Solo il canale app sul telefono è previsto a T+90'. Dispositivo e interventi stradali sono fase 2; costruzione, prove e approvvigionamento non si completano in 90 minuti.
+- SMS opzionale disattivato finché non sono definiti consenso, destinatari, fornitore e costo; budget di consumo disponibile solo dopo autorizzazione.
+- Il budget sviluppo riguarda il percorso verso il servizio di produzione; la disponibilità della demo non prova affidabilità stradale, installabilità PWA o efficacia clinica.
+- Stime di esercizio calcolate prudentemente su 48 mesi, anche per il parco hardware che entra in servizio progressivamente.
+- Indossabile: avvisi locali con camera, voce e vibrazione, senza smartphone. Non comprende LTE/SIM, visione a 360°, GPS o streaming cloud. SMS previsti per utenti dell'app con consenso; nessun invio autonomo promesso dal dispositivo.
+
+## Quadro economico
+
+| Voce | Importo IVA esclusa |
+|---|---:|
+| App e software di produzione | 298.500 € |
+| Sviluppo indossabile fase 2 | 149.000 € |
+| 100 attraversamenti con lampeggianti | 700.000 € |
+| 50 integrazioni semaforiche | 260.000 € |
+| Indossabili e ricambi | 360.000 € |
+| Porta-telefono | 60.000 € |
+| Cloud, backup e monitoraggio | 14.400 € |
+| SMS opzionali e mittente | 144.480 € |
+| Gestione e manutenzione 48 mesi | 603.000 € |
+| Formazione e distribuzione assistita | 259.500 € |
+| Misurazione indipendente e reporting | 131.000 € |
+| **Subtotale prima della riserva** | **2.979.880 €** |
+| Riserva per imprevisti e arrotondamento | 450.120 € |
+| **Totale proposto, 48 mesi** | **3.430.000 €** |
+
+La riserva è circa **15,1% del subtotale**: 15% vale 446.982 €, più 3.138 € di arrotondamento al totale di 3,43 milioni. È ripartita in 347.620 € per infrastruttura, sviluppo necessario ed esercizio tecnico e 102.500 € per sviluppo e altri servizi. Non costituisce un acquisto aggiuntivo e non garantisce che ogni variante rientri nel prezzo.
+
+Le tariffe di 550–700 €/giornata sono ipotesi di fatturazione di un fornitore, comprensive di oneri e margine, non stipendi giornalieri. Le ore di assistenza territoriale sono valorizzate separatamente. Non è aggiunto un secondo margine percentuale generale sopra queste tariffe.
+
+## Sviluppo e validazione
+
+### App e software di produzione
+
+| Attività | Quantità | Tariffa stimata | Importo |
+|---|---:|---:|---:|
+| UX e accessibilità | 30 giornate | 600 € | 18.000 € |
+| PWA e interfaccia | 120 giornate | 650 € | 78.000 € |
+| Visione, tracking e validazione | 160 giornate | 700 € | 112.000 € |
+| API, contatori e integrazione SMS | 50 giornate | 650 € | 32.500 € |
+| Prove browser e dispositivi | 60 giornate | 550 € | 33.000 € |
+| Progettazione privacy e sicurezza iniziale | 20 giornate | 700 € | 14.000 € |
+| Rilascio, documentazione e passaggio di consegne | 20 giornate | 550 € | 11.000 € |
+| **Totale** | | | **298.500 €** |
+
+### Sviluppo indossabile fase 2
+
+| Attività | Quantità | Tariffa stimata | Importo |
+|---|---:|---:|---:|
+| Porting, firmware e gestione energetica | 90 giornate | 650 € | 58.500 € |
+| Progettazione meccanica e industriale | 40 giornate | 600 € | 24.000 € |
+| Integrazione e benchmark del dispositivo | 30 giornate | 650 € | 19.500 € |
+| Prove di laboratorio e documentazione prodotto | 1 forfait stimato | 20.000 € | 20.000 € |
+| Sperimentazione controllata con utenti | 40 giornate | 550 € | 22.000 € |
+| Prototipi strumentati | 10 unità | 500 € | 5000 € |
+| **Totale** | | | **149.000 €** |
+
+Il software dell'indossabile riusa il modello dell'app: la voce di fase 2 finanzia porting, energia, integrazione e prove proprie, non un secondo sviluppo integrale dello stesso riconoscimento. Le prove di laboratorio sono uno stanziamento preliminare: requisiti applicabili e verifiche di prodotto devono essere definiti con specialisti. Nessuna conformità del prodotto finale è attestata dai certificati dei componenti.
+
+## Hardware per unità
+
+### Indossabile: 300 € assemblato
+
+Stima per piccola serie; il concept fotografico non è un disegno esecutivo. Il costo hardware non comprende R&D, prove con utenti o formazione. Fascia prudenziale 250–400 €/unità, senza sconti di volume già negoziati.
+
+| Componente o attività | Stima IVA esclusa |
+|---|---:|
+| Camera con accelerazione | 80 € |
+| Scheda di calcolo e radio locale | 35 € |
+| Memoria e cavi | 15 € |
+| Batteria e circuito di ricarica | 35 € |
+| Audio, vibrazione, pulsante e LED | 20 € |
+| Scocca, clip e fissaggio | 25 € |
+| Assemblaggio e prova di ogni unità | 40 € |
+| Imballaggio e consegna | 10 € |
+| Acquisti, qualità e margine fornitore | 40 € |
+| **Totale per unità/sito** | **300 €** |
+
+### Attraversamento: 7.000 € installato
+
+Due lampeggianti solari, sensore radar e controllo su strutture esistenti. Il riferimento USA indica l'ordine di grandezza, non il prezzo di un sistema italiano. Fascia di pianificazione 5.000–10.000 €/sito, da quotare localmente.
+
+| Componente o attività | Stima IVA esclusa |
+|---|---:|
+| Kit solare con due lampeggianti e batterie | 4500 € |
+| Sensore presenza radar | 750 € |
+| Controllo e sincronizzazione | 300 € |
+| Montaggio e sopralluogo su pali esistenti | 800 € |
+| Messa in servizio e prova | 650 € |
+| **Totale per unità/sito** | **7000 €** |
+
+### Semaforo: 5.200 € integrato
+
+Solo per regolatori compatibili senza sostituzione del controllore o lavori civili. Adattamento, licenze e collaudo sono inclusi nella stima. Fascia 3.500–10.000 €/impianto; nessuna interfaccia del Comune è stata verificata.
+
+| Componente o attività | Stima IVA esclusa |
+|---|---:|
+| Sensore e modulo di interfaccia | 2200 € |
+| Adattamento e licenza del regolatore | 800 € |
+| Installazione elettrica | 700 € |
+| Progetto di integrazione e validazione dei tempi | 900 € |
+| Collaudo e documentazione | 600 € |
+| **Totale per unità/sito** | **5200 €** |
+
+La manutenzione successiva è nel capitolo esercizio: non è compresa una seconda volta nell'installazione. I 200 indossabili di ricambio sono già nei 1.200 acquistati; il fondo batterie/riparazioni copre interventi e componenti, non altre 200 unità complete.
+
+## Esercizio e manutenzione, quattro anni
+
+| Attività | Quantità | Tariffa | Totale |
+|---|---:|---:|---:|
+| Help desk 1 FTE, costo annuo complessivo | 4 anni | 50.000 € | 200.000 € |
+| Manutenzione software 60 giornate/anno | 240 giornate | 650 € | 156.000 € |
+| Coordinamento 30 giornate/anno | 120 giornate | 600 € | 72.000 € |
+| Controllo 150 impianti × 1 visita/anno × 4 | 600 visite | 200 € | 120.000 € |
+| Batterie sostitutive indossabili | 500 unità | 30 € | 15.000 € |
+| Ricondizionamento indossabili | 100 interventi | 40 € | 4000 € |
+| Logistica dei rientri | 400 rientri | 20 € | 8000 € |
+| Audit sicurezza 10 giornate/anno | 40 giornate | 700 € | 28.000 € |
+| **Totale** | | | **603.000 €** |
+
+Un addetto equivalente a tempo pieno è dimensionato su circa 500 contatti/mese da 10 minuti, circa 83 ore di conversazione, più gestione, richiamate e materiali. Copertura in orario di servizio, **non centrale di emergenza 24/7**. La formazione iniziale è nel capitolo dedicato; non è caricata anche sul help desk. Il costo aziendale di 50.000 €/anno è un'ipotesi da verificare, non una retribuzione netta.
+
+### Cloud e SMS
+
+| Servizio cloud | Stima al mese |
+|---|---:|
+| Due istanze applicative | 60 € |
+| Database e disponibilità | 80 € |
+| Backup e spazio dati | 30 € |
+| Monitoraggio e log | 40 € |
+| Distribuzione statica e traffico | 88 € |
+| Dominio e DNS | 2 € |
+| **Totale mensile** | **300 €** |
+| **48 mesi** | **14.400 €** |
+
+La voce cloud copre API, contatori, eventuale invio SMS e disponibilità tecnica; l'analisi video resta sul dispositivo. Il lavoro di manutenzione degli sviluppatori è nel capitolo esercizio, non nel canone cloud. GitHub Pages della demo non prova un servizio di produzione con SLA.
+
+SMS: **1.250 persone consenzienti × 20 segmenti/mese × 48 mesi = 1.200.000 segmenti**. Budget **0,12 €/segmento = 144.000 €**, più 480 € di budget mittente/servizi. Totale **144.480 €**. È una previsione di consumo, non una funzione già implementata né una promessa di SMS illimitati. I messaggi lunghi possono occupare più segmenti; verificare caratteri, tariffe, carrier fee, mittente disponibile e trattamento dei dati prima dell'attivazione.
+
+Il riferimento Twilio è $0,0927/segmento al controllo; lo stanziamento in euro è prudenziale e **non è una conversione al cambio verificato** o un preventivo Twilio.
+
+## Formazione e misura indipendente
+
+### Formazione e distribuzione assistita
+
+| Attività | Quantità | Tariffa stimata | Totale |
+|---|---:|---:|---:|
+| Primo avvio app: 5.000 persone × 45 minuti | 3750 ore | 30 € | 112.500 € |
+| Avvio indossabile: 1.000 persone × 90 minuti | 1500 ore | 30 € | 45.000 € |
+| 40 incontri di gruppo × 3 ore | 120 ore | 50 € | 6000 € |
+| Materiali e comunicazione locale | 5000 kit | 3 € | 15.000 € |
+| Trasferte territoriali | 120 trasferte | 50 € | 6000 € |
+| Richiami formativi: 2.500 persone × 1 ora | 2500 ore | 30 € | 75.000 € |
+| **Totale** | | | **259.500 €** |
+
+### Misurazione indipendente e reporting
+
+| Attività | Quantità | Tariffa stimata | Totale |
+|---|---:|---:|---:|
+| Baseline e protocollo di valutazione | 30 giornate | 700 € | 21.000 € |
+| Campagne sul campo, 2/anno | 8 campagne | 5000 € | 40.000 € |
+| Analisi e rapporti trimestrali: 16 × 5 giornate | 80 giornate | 700 € | 56.000 € |
+| Valutazione finale indipendente | 20 giornate | 700 € | 14.000 € |
+| **Totale** | | | **131.000 €** |
+
+Il gruppo di 1.000 utenti indossabili è incluso nei 5.000 beneficiari: l'avvio del dispositivo è una seconda sessione dedicata dopo l'introduzione iniziale dell'app. Non è una popolazione aggiuntiva di 1.000 persone. I rapporti di misura richiedono accordi sui dati e un protocollo; il budget non dimostra potenza statistica, causalità o 330 vite effettivamente salvate.
+
+## Costo completo prudenziale per il confronto prezzo
+
+Si includono prudentemente **anche sviluppo software, integrazioni, prove e manutenzione necessari alla messa in opera**, oltre a dotazioni e consumi. Queste cifre riclassificano voci del totale, non lo aumentano.
+
+| Voce | Importo IVA esclusa |
+|---|---:|
+| Hardware, installazioni e porta-telefono | 1.380.000 € |
+| Cloud e SMS per 48 mesi | 158.880 € |
+| Manutenzione software, impianti, indossabili e audit | 331.000 € |
+| Sviluppo app e indossabile necessari | 447.500 € |
+| **Subtotale completo senza riserva** | **2.317.380 €** |
+| Riserva tecnica attribuita | 347.620 € |
+| **Costo completo prudenziale programmato** | **2.665.000 €** |
+| Eventuale intera riserva residua usata per messa in opera | 102.500 € |
+| **Massimo prudenziale con tutta la riserva di progetto** | **2.767.500 €** |
+
+Il programmato è **77,7% dell'offerta** e **26,65% della base d'asta**; il massimo prudenziale è **80,7% dell'offerta**, o **27,675% della base**. Non è un prezzo garantito da preventivi. Classificazione finale da confermare rispetto all'Art. 5; ogni impiego della riserva viene attribuito e documentato. Nessun costo necessario viene nascosto in gestione o formazione per abbassare il numero.
+
+Dei 603.000 € di esercizio, 331.000 € sono tecnici e 272.000 € sono assistenza/coordinamento: nella tabella prudenziale sono **riclassificati**, non sommati una seconda volta. Anche i 447.500 € di sviluppo sono già nel totale. I precedenti € 1,24M, € 3,22M e € 3,92M sono superati da questa revisione del perimetro economico, non importi da aggiungere.
+
+## Ordini per tranche e controllo della spesa
+
+Ricognizione di popolazione e impianti; preventivo completo per sito; collaudo; pilota; estensione dopo valutazione indipendente. 100 strisce, 50 semafori e 5.000 beneficiari sono massimi di piano, non quantità censite o da acquistare automaticamente. Selezione con esposizione, incidenti e visibilità; verificare alternative e compatibilità prima dell'ordine.
+
+Prestazioni rendicontate: giornate accettate e risultati dei pacchetti software, utenti unici avviati, ore di formazione, contatti/ticket, visite, segmenti SMS e rapporti indipendenti. Capacità adeguata alla domanda; riserve solo con autorizzazione motivata. Nessun pagamento presunto di riserve e quantità non utilizzate. Il prezzo definitivo e il perimetro essenziale richiesto dal bando devono essere concordati: non si taglia una prestazione necessaria per dichiarare un ribasso artificiale.
+
+Monitoraggio tecnico automatico proposto 24/7, assistenza feriale 9–18 in pool per un equivalente a tempo pieno, obiettivi di presa in carico entro 4 ore di servizio e ripristino o alternativa concordata entro 8 ore di servizio. Obiettivi da contrattualizzare e collaudare, non SLA già operativi; nessuna centrale di soccorso 24/7. Rendiconto mensile e revisione trimestrale di carichi e capacità.
+
+## Pilota fase 2: 100 utenti
+
+| Voce | Quantità | Importo |
 |---|---|---:|
-| App, accessibilità e integrazioni | Budget di progetto nei 48 mesi | € 1.100.000 |
-| Lampeggianti radar su strisce esistenti | 100 × € 2.500, fornitura e installazione stimate | € 250.000 |
-| Moduli su semafori esistenti | 50 × € 1.800, fornitura e installazione stimate | € 90.000 |
-| Dispositivi indossabili fase 2 | 1.000 utenti + 200 ricambi × € 350 | € 420.000 |
-| Porta-telefono | 5.000 × € 12 | € 60.000 |
-| Hosting e servizi tecnici di esercizio | 48 mesi × € 2.500 | € 120.000 |
-| Gestione, assistenza e manutenzione | 48 mesi × € 75.000 | € 3.600.000 |
-| Formazione e distribuzione assistita | € 550.000/anno × 4 | € 2.200.000 |
-| Misura indipendente e reporting | € 250.000/anno × 4 | € 1.000.000 |
-| Sviluppo e prove del dispositivo | Software € 110.000, prove prodotto € 40.000, integrazione € 10.000 | € 160.000 |
-| Riserva per imprevisti | € 300.000 infrastruttura + € 700.000 servizi e progetto | € 1.000.000 |
-| **Totale** | | **€ 10.000.000** |
+| Dispositivi | 100 assegnati + 20 ricambi × 300 € | 36.000 € |
+| R&D, prototipi e prove | Intero costo iniziale di fase 2 | 149.000 € |
+| Formazione al dispositivo | 100 × 1,5 ore × 30 € | 4.500 € |
+| Supporto pilota | Quota del help desk generale | 5.000 € |
+| Riserva pilota | Quota della riserva generale | 29.500 € |
+| **Totale pilota** | | **224.000 €** |
 
-### Prestazioni acquistate e controllo dei costi
+**Già incluso nell'offerta da 3,43 milioni.** I cinque importi sono quote delle rispettive voci generali; non si aggiungono al totale. I 149.000 € di R&D si sostengono una sola volta e non vengono ripetuti quando si estende a 1.000 utenti.
 
-Tariffe e carichi seguenti sono ipotesi di pianificazione del team, non listini o disponibilità accertate. Contrattualizzare e verificare i volumi prima dell'impegno; il tetto non costituisce un minimo da spendere.
+Il solo hardware costa 300 €: il pilota completo costa 2.240 € per partecipante perché include l'intero sviluppo iniziale. Su 1.000 utenti, hardware e ricambi (360.000 €), R&D (149.000 €), formazione dedicata (45.000 €) e manutenzione fisica (27.000 €) fanno **581.000 €**, prima delle quote comuni di supporto, cloud e riserva. La distinzione evita di vendere “300 € a persona” come costo totale del servizio.
 
-| Plafond | Prestazioni e unità verificabili | Controllo della spesa |
-|---|---|---|
-| Gestione € 3.600.000 | Fino a 12 operatori equivalenti × € 5.000/mese × 48 = € 2.880.000; manutenzione tecnica fino a € 15.000/mese × 48 = € 720.000 | Rendiconto mensile di capacità impiegata, ticket, tempi, manutenzioni e ricambi; adeguare operatori alla domanda, non acquistare automaticamente 12 posti |
-| Formazione € 2.200.000 | Fino a 5.000 utenti unici × € 440 sui quattro anni. Ipotesi unitaria: 10 ore tra avvio e richiami × € 40 + € 40 di materiali e logistica, senza duplicare i dispositivi | Registrare sessioni, tempo e avvio autonomo riuscito; nessuna collaborazione gratuita presunta. Fino a 1.000 utenti indossabili sono compresi nei 5.000 |
-| Misura € 1.000.000 | Protocollo e baseline fino a € 100.000; osservazioni indipendenti fino a € 175.000/anno × 4; analisi e report fino a € 50.000/anno × 4 | Protocollo prima della raccolta, dati e report trimestrali accettati; vietata conversione automatica degli avvisi in vite salvate |
-| App € 1.100.000 | Accessibilità, validazione del rilevamento e delle stime, integrazioni autorizzate, compatibilità e manutenzione evolutiva nei 48 mesi | Preventivo per pacchetti con prove e accettazione; non è il prezzo della sola pagina HTML dimostrativa |
+## Sensibilità e limiti
 
-Il dimensionamento massimo non dimostra che € 6.800.000 di servizi siano necessari. Il Comune deve poter ridurre quantità e capacità senza pagare il plafond intero; il perimetro essenziale concordato resta da garantire, non da tagliare per mascherare un requisito.
-
-**Ordini per tranche:** ricognizione di popolazione, siti e impianti; offerta completa per sito; collaudo; pilota; estensione dopo valutazione indipendente. I 100 attraversamenti e 50 semafori sono massimi di piano, non siti censiti. Priorità con esposizione, incidenti, visibilità e presenza di alternative, non con il solo numero storico dei decessi. Un sito incompatibile viene escluso o riprogettato prima dell'ordine. Riserve con autorizzazione motivata; nessuna distribuzione di hardware prima delle prove.
-
-**Costo completo per sito:** fornitura, sopralluogo, installazione, compatibilità, collaudo, rete, batterie, visite, ricambi e manutenzione per 48 mesi. € 2.500 e € 1.800 coprono soltanto fornitura e posa stimate; i costi di esercizio sono nel plafond tecnico € 720.000 e nella riserva infrastrutturale, non dichiarati zero. Preventivi ancora da acquisire; aggiornare il numero di siti se il costo completo non rientra nel tetto.
-
-**Servizio proposto:** monitoraggio tecnico automatico 24/7 e assistenza lunedì–venerdì 9–18; guasti bloccanti presi in carico entro 4 ore di servizio, ripristino o alternativa concordata entro 8 ore di servizio. SLA da collaudare; nessun servizio di soccorso 24/7. Rendiconto mensile, verifica trimestrale della domanda e nessun incremento oltre il plafond senza nuova decisione.
-
-**Hosting e integrazioni:** € 120.000 includono hosting di produzione, monitoraggio, backup della configurazione, log tecnici e quote di traffico da specificare nel preventivo. La demo gratuita non prova disponibilità per 48 mesi. SMS non inclusi come consumo illimitato: opzionali e disattivati nel servizio iniziale; se attivati, quantità × tariffa documentata entro € 10.000 dei € 120.000, senza aumentare il totale. Telemetria e richieste alla centrale richiedono servizi autorizzati e accordi col gestore, non implementati nella demo.
-
-## Costi infrastrutturali
-
-| Voce | Importo IVA esclusa |
+| Variazione rispetto al piano | Effetto prima della riserva |
 |---|---:|
-| Strisce e semafori, inclusa installazione stimata | € 340.000 |
-| Dispositivi e porta-telefono | € 480.000 |
-| Hosting e servizi tecnici di esercizio | € 120.000 |
-| Riserva prudenziale attribuita all'infrastruttura | € 300.000 |
-| Manutenzione tecnica, inclusi sistemi e componenti stradali | € 720.000 |
-| Sviluppo app e integrazioni necessari, inclusi prudenzialmente | € 1.100.000 |
-| Sviluppo, integrazione e prove indossabile, inclusi prudenzialmente | € 160.000 |
-| **Totale completo prudenziale per il confronto prezzo** | **€ 3.220.000** |
+| Strisce da 7.000 a 10.000 €/sito | +300.000 € |
+| Semafori da 5.200 a 10.000 €/impianto | +240.000 € |
+| Indossabili da 300 a 400 €/unità | +120.000 € |
+| Raddoppio dei segmenti SMS | +144.000 € |
 
-**32,2% del massimo complessivo.** Il precedente subtotale € 1.240.000 descriveva solo dotazioni, hosting e riserva; non è più presentato come costo completo. Ora includiamo prudenzialmente manutenzione tecnica, sviluppo e integrazioni necessari: nessun risparmio ottenuto cambiando etichetta. La classificazione finale va concordata rispetto all'Art. 5. I € 720.000 sono già nei € 3.600.000 di gestione: non sommarli due volte. Riserva servizi € 700.000: destinazione documentata prima dell'uso; ogni quota usata per componenti necessari viene aggiunta al rendiconto infrastrutturale. Tutte le riserve restano nel tetto € 10 milioni.
+Le variazioni cumulate assorbirebbero 804.000 €, oltre i 450.120 € di riserva: occorrerebbe rivedere importo o perimetro prima dell'offerta definitiva, non promettere che la riserva copra qualsiasi scenario. Sostituzione dei regolatori, nuovi pali/opere civili, modem/SIM per gli indossabili o monitoraggio umano 24/7 richiedono un progetto economico distinto e non sono compresi.
 
-**Massimo per il confronto prudenziale, riserva residua compresa: € 3.920.000 (39,2%).** È € 3.220.000 + € 700.000 nel caso tutta la riserva servizi/progetto servisse alla completa messa in opera. Esporre anche questo massimo: il subtotale € 3.220.000 non è un prezzo infrastrutturale garantito. Non incrementa l'importo totale di € 10 milioni.
+A capacità piena di 5.000 beneficiari, il costo medio pianificato è **686 € in quattro anni, circa 172 €/anno**; comprende anche interventi stradali e valutazione. Non è una quota a carico dell'anziano né un costo effettivamente osservato.
 
-## Pilota indossabile in fase 2
+## Riferimenti di mercato e verificabilità
 
-| Voce | Importo IVA esclusa |
-|---|---:|
-| 100 utenti + 20 ricambi × € 350 | € 42.000 |
-| Sviluppo, integrazione e prove prodotto | € 160.000 |
-| Formazione e assistenza iniziale | € 18.000 |
-| Riserva pilota | € 30.000 |
-| **Budget pilota** | **€ 250.000** |
+- [Raspberry Pi AI Camera](https://www.raspberrypi.com/products/ai-camera/): possibile componente di prototipo con accelerazione, campo visivo circa 78° e listino ufficiale $70; non un dispositivo pronto all'uso.
+- [Raspberry Pi Zero 2 W](https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/) e [catalogo componenti Melopero](https://www.melopero.com/categoria-prodotto/accessories/cameras/): orientamento sulla piattaforma e approvvigionamento, senza preventivo industriale ricevuto.
+- [Twilio, SMS Italia](https://www.twilio.com/en-us/sms/pricing/it): $0,0927/segmento al controllo, fee aggiuntive possibili; consumi e stanziamento in euro sono ipotesi interne.
+- [AWS Lightsail](https://aws.amazon.com/lightsail/pricing/): listini cloud per dimensionare una piattaforma leggera; non viene equiparato il prezzo di una VM all'intero servizio.
+- [TrafficSign, sistemi RRFB](https://www.trafficsign.com/rectangular-rapid-flashing-beacons): comparatore USA con kit solare da due lampeggianti da $4.994,65; non preventivo italiano, compatibilità o conformità europea.
 
-**Già incluso nelle voci generali: non si somma ai 10 milioni.** Sperimentazione controllata; distribuzione fino a 1.000 utenti subordinata a prove di affidabilità, usabilità, autonomia e adeguatezza del prodotto. Non operativo a T+90'.
+Ricerca del 12/10/2026. Prezzi in valuta estera mantenuti nella valuta originale: nessun tasso di cambio presunto spacciato per quotazione. Tariffe professionali, quantità e costi di integrazione sono stime esplicitamente dichiarate. [costi.json](costi.json) contiene coefficienti, importi e attribuzioni per rifare tutti i conti.
 
-Costo del pilota: **€ 2.500 per utente**, con sviluppo e prove inclusi; € 350 è soltanto la stima del singolo dispositivo. I € 30.000 di riserva pilota sono inclusi nella riserva infrastrutturale € 300.000; € 18.000 nell'onboarding generale, € 160.000 nello sviluppo e € 42.000 nella fornitura. Se non supera le prove, non ordinare i restanti 1.080 dispositivi: fino a € 378.000 di quella fornitura non impegnati. Non è un risparmio già ottenuto.
+## Requisiti del concorrente
 
-Fascia stimata **€ 250–400 per unità**, con una camera e assemblaggio, esclusi sviluppo e validazione. Variante che osserva più lati simultaneamente: **€ 450–800 per unità**, stima preliminare per un progetto distinto, con sviluppo ulteriore non impegnato in questa offerta. Nessuna copertura a 360° dichiarata.
-
-## Articolo 4
-
-- Requisiti generali PA: dichiarazione del concorrente da produrre.
-- LinkedIn: soglia del bando di 5.000.000 like medi annui negli ultimi tre anni; dato del concorrente da documentare, senza inventare una media storica.
-- App usata da nessuno ma scaricata da molti: referenza da indicare. La gag non è un'attestazione.
-
-## Fonti e limiti della stima
-
-Possibile componente di prototipo: [Raspberry Pi AI Camera](https://www.raspberrypi.com/products/ai-camera/). Piattaforma, prezzi correnti e disponibilità da verificare con preventivi; il solo modulo non è il costo completo né dimostra prestazioni sufficienti. Le fasce € 250–400 e € 450–800 sono stime preliminari del team, non offerte industriali. Per le alternative e il protocollo di confronto economico vedere §3 della relazione tecnica: nessuna convenienza già dimostrata rispetto a formazione, accompagnamento o impianti esistenti.
+Requisiti generali PA, media di almeno 5.000.000 like annui e referenza dell'app prevista dall'Art. 4 devono essere documentati dal concorrente; nessuna dichiarazione di possesso o dato storico viene inventata.

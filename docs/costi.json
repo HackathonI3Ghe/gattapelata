@@ -1,0 +1,623 @@
+{
+  "currency": "EUR",
+  "vat": "esclusa",
+  "duration_months": 48,
+  "auction_base_eur": 10000000,
+  "assumed_beneficiaries": 5000,
+  "wearable_users": 1000,
+  "crosswalk_sites": 100,
+  "signal_sites": 50,
+  "groups": [
+    {
+      "id": "app",
+      "title": "App e software di produzione",
+      "infra": true,
+      "items": [
+        {
+          "id": "app_1",
+          "description": "UX e accessibilità",
+          "quantity": 30,
+          "unit_price_eur": 600,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 18000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "app_2",
+          "description": "PWA e interfaccia",
+          "quantity": 120,
+          "unit_price_eur": 650,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 78000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "app_3",
+          "description": "Visione, tracking e validazione",
+          "quantity": 160,
+          "unit_price_eur": 700,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 112000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "app_4",
+          "description": "API, contatori e integrazione SMS",
+          "quantity": 50,
+          "unit_price_eur": 650,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 32500,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "app_5",
+          "description": "Prove browser e dispositivi",
+          "quantity": 60,
+          "unit_price_eur": 550,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 33000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "app_6",
+          "description": "Progettazione privacy e sicurezza iniziale",
+          "quantity": 20,
+          "unit_price_eur": 700,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 14000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "app_7",
+          "description": "Rilascio, documentazione e passaggio di consegne",
+          "quantity": 20,
+          "unit_price_eur": 550,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 11000,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    },
+    {
+      "id": "device_rd",
+      "title": "Sviluppo indossabile fase 2",
+      "infra": true,
+      "items": [
+        {
+          "id": "device_rd_1",
+          "description": "Porting, firmware e gestione energetica",
+          "quantity": 90,
+          "unit_price_eur": 650,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 58500,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "device_rd_2",
+          "description": "Progettazione meccanica e industriale",
+          "quantity": 40,
+          "unit_price_eur": 600,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 24000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "device_rd_3",
+          "description": "Integrazione e benchmark del dispositivo",
+          "quantity": 30,
+          "unit_price_eur": 650,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 19500,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "device_rd_4",
+          "description": "Prove di laboratorio e documentazione prodotto",
+          "quantity": 1,
+          "unit_price_eur": 20000,
+          "unit": "forfait stimato",
+          "infrastructure": true,
+          "amount_eur": 20000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "device_rd_5",
+          "description": "Sperimentazione controllata con utenti",
+          "quantity": 40,
+          "unit_price_eur": 550,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 22000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "device_rd_6",
+          "description": "Prototipi strumentati",
+          "quantity": 10,
+          "unit_price_eur": 500,
+          "unit": "unità",
+          "infrastructure": true,
+          "amount_eur": 5000,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    },
+    {
+      "id": "crosswalk",
+      "title": "100 attraversamenti con lampeggianti",
+      "infra": true,
+      "items": [
+        {
+          "id": "crosswalk_1",
+          "description": "Attraversamento completo su pali esistenti",
+          "quantity": 100,
+          "unit_price_eur": 7000,
+          "unit": "siti",
+          "infrastructure": true,
+          "amount_eur": 700000,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    },
+    {
+      "id": "signal",
+      "title": "50 integrazioni semaforiche",
+      "infra": true,
+      "items": [
+        {
+          "id": "signal_1",
+          "description": "Integrazione su regolatore compatibile esistente",
+          "quantity": 50,
+          "unit_price_eur": 5200,
+          "unit": "impianti",
+          "infrastructure": true,
+          "amount_eur": 260000,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    },
+    {
+      "id": "wearables",
+      "title": "Indossabili e ricambi",
+      "infra": true,
+      "items": [
+        {
+          "id": "wearables_1",
+          "description": "1.000 utenti e 200 ricambi in dotazione",
+          "quantity": 1200,
+          "unit_price_eur": 300,
+          "unit": "unità",
+          "infrastructure": true,
+          "amount_eur": 360000,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    },
+    {
+      "id": "holders",
+      "title": "Porta-telefono",
+      "infra": true,
+      "items": [
+        {
+          "id": "holders_1",
+          "description": "Porta-telefono",
+          "quantity": 5000,
+          "unit_price_eur": 12,
+          "unit": "unità",
+          "infrastructure": true,
+          "amount_eur": 60000,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "title": "Cloud, backup e monitoraggio",
+      "infra": true,
+      "items": [
+        {
+          "id": "cloud_1",
+          "description": "Esercizio tecnico, senza video in cloud",
+          "quantity": 48,
+          "unit_price_eur": 300,
+          "unit": "mesi",
+          "infrastructure": true,
+          "amount_eur": 14400,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    },
+    {
+      "id": "sms",
+      "title": "SMS opzionali e mittente",
+      "infra": true,
+      "items": [
+        {
+          "id": "sms_1",
+          "description": "1.250 opt-in × 20 segmenti/mese × 48 mesi",
+          "quantity": 1200000,
+          "unit_price_eur": 0.12,
+          "unit": "segmenti",
+          "infrastructure": true,
+          "amount_eur": 144000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "sms_2",
+          "description": "Budget mittente e servizi di invio",
+          "quantity": 48,
+          "unit_price_eur": 10,
+          "unit": "mesi",
+          "infrastructure": true,
+          "amount_eur": 480,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "Gestione e manutenzione 48 mesi",
+      "items": [
+        {
+          "id": "operations_1",
+          "description": "Help desk 1 FTE, costo annuo complessivo",
+          "quantity": 4,
+          "unit_price_eur": 50000,
+          "unit": "anni",
+          "infrastructure": false,
+          "amount_eur": 200000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "operations_2",
+          "description": "Manutenzione software 60 giornate/anno",
+          "quantity": 240,
+          "unit_price_eur": 650,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 156000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "operations_3",
+          "description": "Coordinamento 30 giornate/anno",
+          "quantity": 120,
+          "unit_price_eur": 600,
+          "unit": "giornate",
+          "infrastructure": false,
+          "amount_eur": 72000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "operations_4",
+          "description": "Controllo 150 impianti × 1 visita/anno × 4",
+          "quantity": 600,
+          "unit_price_eur": 200,
+          "unit": "visite",
+          "infrastructure": true,
+          "amount_eur": 120000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "operations_5",
+          "description": "Batterie sostitutive indossabili",
+          "quantity": 500,
+          "unit_price_eur": 30,
+          "unit": "unità",
+          "infrastructure": true,
+          "amount_eur": 15000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "operations_6",
+          "description": "Ricondizionamento indossabili",
+          "quantity": 100,
+          "unit_price_eur": 40,
+          "unit": "interventi",
+          "infrastructure": true,
+          "amount_eur": 4000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "operations_7",
+          "description": "Logistica dei rientri",
+          "quantity": 400,
+          "unit_price_eur": 20,
+          "unit": "rientri",
+          "infrastructure": true,
+          "amount_eur": 8000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "operations_8",
+          "description": "Audit sicurezza 10 giornate/anno",
+          "quantity": 40,
+          "unit_price_eur": 700,
+          "unit": "giornate",
+          "infrastructure": true,
+          "amount_eur": 28000,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "title": "Formazione e distribuzione assistita",
+      "infra": false,
+      "items": [
+        {
+          "id": "training_1",
+          "description": "Primo avvio app: 5.000 persone × 45 minuti",
+          "quantity": 3750,
+          "unit_price_eur": 30,
+          "unit": "ore",
+          "infrastructure": false,
+          "amount_eur": 112500,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "training_2",
+          "description": "Avvio indossabile: 1.000 persone × 90 minuti",
+          "quantity": 1500,
+          "unit_price_eur": 30,
+          "unit": "ore",
+          "infrastructure": false,
+          "amount_eur": 45000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "training_3",
+          "description": "40 incontri di gruppo × 3 ore",
+          "quantity": 120,
+          "unit_price_eur": 50,
+          "unit": "ore",
+          "infrastructure": false,
+          "amount_eur": 6000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "training_4",
+          "description": "Materiali e comunicazione locale",
+          "quantity": 5000,
+          "unit_price_eur": 3,
+          "unit": "kit",
+          "infrastructure": false,
+          "amount_eur": 15000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "training_5",
+          "description": "Trasferte territoriali",
+          "quantity": 120,
+          "unit_price_eur": 50,
+          "unit": "trasferte",
+          "infrastructure": false,
+          "amount_eur": 6000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "training_6",
+          "description": "Richiami formativi: 2.500 persone × 1 ora",
+          "quantity": 2500,
+          "unit_price_eur": 30,
+          "unit": "ore",
+          "infrastructure": false,
+          "amount_eur": 75000,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    },
+    {
+      "id": "measurement",
+      "title": "Misurazione indipendente e reporting",
+      "infra": false,
+      "items": [
+        {
+          "id": "measurement_1",
+          "description": "Baseline e protocollo di valutazione",
+          "quantity": 30,
+          "unit_price_eur": 700,
+          "unit": "giornate",
+          "infrastructure": false,
+          "amount_eur": 21000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "measurement_2",
+          "description": "Campagne sul campo, 2/anno",
+          "quantity": 8,
+          "unit_price_eur": 5000,
+          "unit": "campagne",
+          "infrastructure": false,
+          "amount_eur": 40000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "measurement_3",
+          "description": "Analisi e rapporti trimestrali: 16 × 5 giornate",
+          "quantity": 80,
+          "unit_price_eur": 700,
+          "unit": "giornate",
+          "infrastructure": false,
+          "amount_eur": 56000,
+          "price_status": "stima di pianificazione, non preventivo"
+        },
+        {
+          "id": "measurement_4",
+          "description": "Valutazione finale indipendente",
+          "quantity": 20,
+          "unit_price_eur": 700,
+          "unit": "giornate",
+          "infrastructure": false,
+          "amount_eur": 14000,
+          "price_status": "stima di pianificazione, non preventivo"
+        }
+      ]
+    }
+  ],
+  "direct_subtotal_eur": 2979880,
+  "infrastructure_direct_eur": 2317380,
+  "infrastructure_risk_eur": 347620,
+  "service_risk_eur": 102500,
+  "contingency_eur": 450120,
+  "proposal_total_eur": 3430000,
+  "pilot": {
+    "users": 100,
+    "spares": 20,
+    "hardware_eur": 36000,
+    "development_eur": 149000,
+    "training_eur": 4500,
+    "support_eur": 5000,
+    "risk_eur": 29500,
+    "total_eur": 224000,
+    "included_in_total": true
+  },
+  "unit_breakdowns": {
+    "wearable": [
+      [
+        "Camera con accelerazione",
+        80
+      ],
+      [
+        "Scheda di calcolo e radio locale",
+        35
+      ],
+      [
+        "Memoria e cavi",
+        15
+      ],
+      [
+        "Batteria e circuito di ricarica",
+        35
+      ],
+      [
+        "Audio, vibrazione, pulsante e LED",
+        20
+      ],
+      [
+        "Scocca, clip e fissaggio",
+        25
+      ],
+      [
+        "Assemblaggio e prova di ogni unità",
+        40
+      ],
+      [
+        "Imballaggio e consegna",
+        10
+      ],
+      [
+        "Acquisti, qualità e margine fornitore",
+        40
+      ]
+    ],
+    "crosswalk": [
+      [
+        "Kit solare con due lampeggianti e batterie",
+        4500
+      ],
+      [
+        "Sensore presenza radar",
+        750
+      ],
+      [
+        "Controllo e sincronizzazione",
+        300
+      ],
+      [
+        "Montaggio e sopralluogo su pali esistenti",
+        800
+      ],
+      [
+        "Messa in servizio e prova",
+        650
+      ]
+    ],
+    "signal": [
+      [
+        "Sensore e modulo di interfaccia",
+        2200
+      ],
+      [
+        "Adattamento e licenza del regolatore",
+        800
+      ],
+      [
+        "Installazione elettrica",
+        700
+      ],
+      [
+        "Progetto di integrazione e validazione dei tempi",
+        900
+      ],
+      [
+        "Collaudo e documentazione",
+        600
+      ]
+    ],
+    "cloud": [
+      [
+        "Due istanze applicative",
+        60
+      ],
+      [
+        "Database e disponibilità",
+        80
+      ],
+      [
+        "Backup e spazio dati",
+        30
+      ],
+      [
+        "Monitoraggio e log",
+        40
+      ],
+      [
+        "Distribuzione statica e traffico",
+        88
+      ],
+      [
+        "Dominio e DNS",
+        2
+      ]
+    ]
+  },
+  "sources": [
+    {
+      "url": "https://www.raspberrypi.com/products/ai-camera/",
+      "supports": "Camera con accelerazione e campo visivo circa 78°; prezzo ufficiale in USD, non preventivo dell'indossabile"
+    },
+    {
+      "url": "https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/",
+      "supports": "Piattaforma possibile; prestazioni del sistema completo da verificare"
+    },
+    {
+      "url": "https://www.melopero.com/categoria-prodotto/accessories/cameras/",
+      "supports": "Catalogo componenti, prezzi e disponibilità variabili; nessuna quotazione industriale"
+    },
+    {
+      "url": "https://www.twilio.com/en-us/sms/pricing/it",
+      "supports": "Riferimento $0,0927/segmento in Italia al controllo; possibili fee aggiuntive. Budget €0,12 è stima prudenziale, non conversione certificata"
+    },
+    {
+      "url": "https://aws.amazon.com/lightsail/pricing/",
+      "supports": "Prezzi infrastruttura cloud; il budget €300/mese comprende più servizi e non equivale al prezzo di una singola VM"
+    },
+    {
+      "url": "https://www.trafficsign.com/rectangular-rapid-flashing-beacons",
+      "supports": "Comparatore USA: kit da due lampeggianti solari da $4.994,65. Non preventivo italiano, non prova di conformità europea e non include l'integrazione proposta"
+    }
+  ],
+  "infrastructure_complete_eur": 2665000,
+  "infrastructure_max_if_all_risk_eur": 2767500
+}
