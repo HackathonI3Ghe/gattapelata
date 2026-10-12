@@ -288,16 +288,33 @@
       </svg><span class="nome" data-nome></span></span><span id="ora"></span></div>
     <div class="cam" id="cam" hidden>
       <svg viewBox="0 0 360 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <rect width="360" height="300" fill="#2c3e50"/>
-        <rect x="140" y="105" width="80" height="85" fill="#a1887f"/>
-        <rect x="160" y="125" width="14" height="20" fill="#4e342e"/><rect x="186" y="125" width="14" height="20" fill="#4e342e"/>
-        <polygon points="0,0 140,105 140,190 0,300" fill="#8d6e63"/>
-        <polygon points="360,0 220,105 220,190 360,300" fill="#795548"/>
-        <polygon points="25,55 75,93 75,150 25,135" fill="#3e2723"/>
-        <polygon points="95,108 125,130 125,165 95,160" fill="#3e2723"/>
-        <polygon points="335,55 285,93 285,150 335,135" fill="#3e2723"/>
-        <polygon points="265,108 235,130 235,165 265,160" fill="#3e2723"/>
-        <polygon points="0,300 140,190 220,190 360,300" fill="#5a5a5a"/>
+        <defs>
+          <linearGradient id="cCielo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fa7d6"/><stop offset="1" stop-color="#dce8f3"/></linearGradient>
+          <linearGradient id="cMuroS" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c47a4c"/><stop offset="1" stop-color="#9a5634"/></linearGradient>
+          <linearGradient id="cMuroD" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#d2a65a"/><stop offset="1" stop-color="#a77d35"/></linearGradient>
+          <linearGradient id="cStrada" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#3f4249"/><stop offset="1" stop-color="#6c6f76"/></linearGradient>
+        </defs>
+        <rect width="360" height="300" fill="url(#cCielo)"/>
+        <rect x="140" y="105" width="80" height="85" fill="#e3cfa8"/>
+        <rect x="140" y="105" width="80" height="6" fill="#b98d5d"/>
+        <rect x="160" y="125" width="14" height="20" fill="#2b2f3a"/><rect x="186" y="125" width="14" height="20" fill="#2b2f3a"/>
+        <rect x="155" y="125" width="4" height="20" fill="#3f7d4c"/><rect x="175" y="125" width="4" height="20" fill="#3f7d4c"/>
+        <rect x="181" y="125" width="4" height="20" fill="#3f7d4c"/><rect x="201" y="125" width="4" height="20" fill="#3f7d4c"/>
+        <rect x="170" y="160" width="20" height="30" rx="2" fill="#5d3a24"/>
+        <polygon points="0,0 140,105 140,190 0,300" fill="url(#cMuroS)"/>
+        <polygon points="360,0 220,105 220,190 360,300" fill="url(#cMuroD)"/>
+        <polygon points="25,55 75,93 75,150 25,135" fill="#2b2f3a"/>
+        <polygon points="12,45 25,55 25,135 12,131" fill="#3f7d4c"/><polygon points="75,93 84,100 84,152 75,150" fill="#3f7d4c"/>
+        <polygon points="95,108 125,130 125,165 95,160" fill="#2b2f3a"/>
+        <polygon points="335,55 285,93 285,150 335,135" fill="#2b2f3a"/>
+        <polygon points="348,45 335,55 335,135 348,131" fill="#3f7d4c"/><polygon points="285,93 276,100 276,152 285,150" fill="#3f7d4c"/>
+        <polygon points="265,108 235,130 235,165 265,160" fill="#2b2f3a"/>
+        <polygon points="0,300 140,190 220,190 360,300" fill="url(#cStrada)"/>
+        <g stroke="rgba(255,255,255,.09)" stroke-width="2">
+          <line x1="60" y1="300" x2="166" y2="190"/><line x1="120" y1="300" x2="173" y2="190"/><line x1="180" y1="300" x2="180" y2="190"/>
+          <line x1="240" y1="300" x2="187" y2="190"/><line x1="300" y1="300" x2="194" y2="190"/>
+          <line x1="40" y1="268" x2="320" y2="268"/><line x1="78" y1="238" x2="282" y2="238"/><line x1="108" y1="214" x2="252" y2="214"/>
+        </g>
         <g id="camCar" visibility="hidden">
           <rect x="-50" y="-36" width="100" height="56" rx="12" fill="#e53935"/>
           <rect x="-38" y="-30" width="76" height="22" rx="5" fill="#b3e5fc"/>
