@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c \"import pathlib,runpy; p=next(p for p in (pathlib.Path.cwd(),*pathlib.Path.cwd().parents) if (p/'scripts/hackathon.py').is_file()); runpy.run_path(str(p/'scripts/hackathon.py'),run_name='__main__')\" hook start",
+            "timeout": 180
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c \"import pathlib,runpy; p=next(p for p in (pathlib.Path.cwd(),*pathlib.Path.cwd().parents) if (p/'scripts/hackathon.py').is_file()); runpy.run_path(str(p/'scripts/hackathon.py'),run_name='__main__')\" hook start",
+            "timeout": 180
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python -c \"import pathlib,runpy; p=next(p for p in (pathlib.Path.cwd(),*pathlib.Path.cwd().parents) if (p/'scripts/hackathon.py').is_file()); runpy.run_path(str(p/'scripts/hackathon.py'),run_name='__main__')\" hook stop",
+            "timeout": 300
+          }
+        ]
+      }
+    ]
+  }
+}

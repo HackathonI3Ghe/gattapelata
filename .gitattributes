@@ -1,0 +1,4 @@
+.githooks/* text eol=lf
+*.py text eol=lf
+*.json text eol=lf
+SKILL.md text eol=lf

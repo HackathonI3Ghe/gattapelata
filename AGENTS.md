@@ -101,3 +101,13 @@ Forma seria da gara pubblica, ma il bando è satirico e la commissione se lo asp
 - Oggetto: "arrivare **vive** dall'altra parte".
 
 Lingua di tutti i deliverable: **italiano**.
+
+## Skill e sincronizzazione Claude Code / Codex
+
+Le procedure comuni sono in `.agents/skills/`; `.claude/skills/` contiene copie generate. Configurazione e comandi: [automation/README.md](automation/README.md). Il bando prevale su checklist e report automatici.
+
+Il team ha autorizzato commit e push automatici dei task completati nei soli file del ruolo configurato nel clone. A inizio attività applicare `hackathon-sync` e leggere le note dei colleghi. Prima di terminare un task con modifiche, aggiornare la propria nota di passaggio e applicare `hackathon-review`; per modifiche alla demo applicare anche `hackathon-demo-check`. Solo dopo verifiche e revisione accettata marcare il task `ready`: Stop pubblicherà il contenuto verificato. Task incompleti non vanno marcati pronti.
+
+Persona A scrive `demo/NOTE-TECNICHE.md` e `demo/NOTE-REVISIONE.md`; Persona B scrive `docs/NOTE-COMMERCIALI.md` e `docs/NOTE-REVISIONE.md`. I report registrano esplicitamente prove non eseguite e lavoro pendente dell'altro ruolo. Il revisore legge entrambi i ruoli, ma corregge solo il proprio. Non avviare un'altra CLI AI dagli hook.
+
+`scripts/`, `automation/`, `.agents/`, `.claude/`, `.codex/`, `.githooks/` e le istruzioni comuni sono infrastruttura del team: modificarli solo per richieste di manutenzione delle automazioni, con staging esplicito. Non appartengono alla pubblicazione automatica di A o B. Nessun force push, stash automatico o bypass degli hook. In caso di conflitto o rete non disponibile, segnalare lo stato e preservare il lavoro locale.
