@@ -354,7 +354,7 @@
       </svg>
       <span>ATTRAVERSO</span>
     </button>
-    <div class="counter" id="counter">Quasi-incidenti evitati: <b id="cntQuasi">0</b></div>
+    <div class="counter" id="counter">Avvisi di attesa: <b id="cntQuasi">0</b></div>
   </div>
 </div>
 
@@ -373,7 +373,7 @@
     </div>
   </header>
   <h2><span class="eyebrow">Livello 2 · simulato · installato nei 48 mesi</span> Lato strada</h2>
-  <p class="nota">A sinistra l'app <b data-nome></b> (Livello 1, attiva a T+90' in tutti i vicoli).
+  <p class="nota">A sinistra l'app <b data-nome></b> (Livello 1, canale web a T+90'; uso stradale da validare).
     Qui il Livello 2: hardware montato su strisce e semafori che esistono già, installato nei 48 mesi di gestione.</p>
   <svg class="scena" viewBox="0 0 600 440" aria-hidden="true">
     <defs>
@@ -454,7 +454,7 @@
     <div class="card" id="cRadar"><h3>Sensore radar (niente immagini)</h3><div class="v" id="vRadar"></div></div>
     <div class="card" id="cSem"><h3>Semaforo pedonale (dove c'è)</h3><div class="v" id="vSem"></div></div>
     <div class="card wide" id="cDec"><h3>Come decide l'app</h3><div class="v" id="vDec"></div></div>
-    <div class="card wide"><h3>Dati anonimi al Comune (metodo di misura)</h3><div class="v" id="vDati"></div></div>
+    <div class="card wide"><h3>Contatori illustrativi (metodo da validare)</h3><div class="v" id="vDati"></div></div>
   </div>
 </section>
 
@@ -618,7 +618,7 @@ function decisione(html) { $("vDec").innerHTML = html; }
 function aggiornaDati(pop) {
   $("cntQuasi").textContent = nQuasi;
   $("vDati").innerHTML = `<span class="kpi"><b class="giallo">${nAttraversamenti}</b> attraversamenti assistiti</span>` +
-    `<span class="kpi"><b class="giallo">${nQuasi}</b> quasi-incidenti evitati</span>` +
+    `<span class="kpi"><b class="giallo">${nQuasi}</b> avvisi di attesa</span>` +
     `<span class="privacy">nessuna immagine · nessun nome</span>`;
   if (pop) {
     const c = $("counter"); c.classList.remove("pop"); void c.offsetWidth; c.classList.add("pop");
@@ -653,7 +653,7 @@ const PASSI = [
       }, 1500);
     },
   },
-  { // 2. aspetta: l'auto passa, quasi-incidente evitato
+  { // 2. aspetta: l'auto passa, avviso di attesa simulato
     dura: 5200,
     entra() {
       ui({ bg: "rosso", big: "✋<br>ASPETTA", enorme: true, sub: `Auto tra <b>${ARRIVO_AUTO_S} s</b>.<br>A te servono <b>${SERVONO_S} s</b>.<br>Non fai in tempo.` });
@@ -714,7 +714,7 @@ const PASSI = [
       parla(`Brava ${UTENTE}. Sei arrivata dall'altra parte.`);
       nAttraversamenti++; aggiornaDati();
       strada({ auto: "passata", persona: "arrivata" });
-      decisione("Attraversamento completato. Al Comune arrivano solo due contatori anonimi.");
+      decisione("Simulazione completata. Contatori illustrativi locali; nessun dato inviato al Comune.");
     },
   },
 ];
@@ -809,7 +809,13 @@ async function avviaCamera() {
 async function cicloCamera(g) {
   if (g !== gen || !cam) return;
   let pred = [];
-  try { pred = await modello.detect(cam.video); } catch (e) { pred = []; }
+  try { pred = await modello.detect(cam.video); } catch (e) {
+    if (g !== gen || !cam) return;
+    fermaCamera();
+    ui({ big: "Analisi non disponibile", sub: "Non posso valutare la strada.", start: true });
+    decisione("Errore di analisi: nessuna indicazione di strada libera. Premere ATTRAVERSO per riprovare la simulazione.");
+    return;
+  }
   if (g !== gen || !cam) return;
   const veicoli = pred.filter((p) => VEICOLI[p.class] && p.score > 0.5);
   disegnaRiquadri(veicoli);
@@ -849,7 +855,7 @@ function valutaCamera(v) {
     stato = (vicino || (ttc !== null && ttc < SERVONO_S)) ? "aspetta" : "lontano";
   }
   if (stato !== cam.stato) {
-    if (cam.stato === "aspetta" && stato === "libero") { nQuasi++; aggiornaDati(true); }
+    if (stato === "aspetta") { nQuasi++; aggiornaDati(true); }
     cam.stato = stato;
     const voce = ora - cam.ultimaVoce > 2000;
     if (stato === "aspetta") {
@@ -858,13 +864,13 @@ function valutaCamera(v) {
     } else if (stato === "lontano") {
       ui({ cam: "📷 FOTOCAMERA", big: "Veicolo lontano" });
     } else {
-      ui({ bg: "verde", cam: "📷 FOTOCAMERA", big: "Libero ✓" });
-      if (voce) { parla("Libero."); cam.ultimaVoce = ora; }
+      ui({ cam: "📷 FOTOCAMERA", big: "Nessun veicolo rilevato", sub: "Non significa strada libera." });
+      if (voce) { parla("Nessun veicolo rilevato. Non significa strada libera."); cam.ultimaVoce = ora; }
     }
   }
   const arrivo = ttc !== null ? `Arrivo tra <b>${Math.round(ttc)} s</b> · ` : "";
-  $("sub").innerHTML = stato === "libero" ? "" : `${arrivo}A te servono <b>${SERVONO_S} s</b>`;
-  if (stato === "libero") decisione("Fotocamera: nessun veicolo inquadrato.");
+  $("sub").innerHTML = stato === "libero" ? "Non significa strada libera." : `${arrivo}A te servono <b>${SERVONO_S} s</b>`;
+  if (stato === "libero") decisione("Nessun veicolo rilevato: non prova strada libera. Fotocamera sperimentale, nessuna autorizzazione ad attraversare.");
   else decisione(`${v ? VEICOLI[v.class] : "Veicolo"} inquadrato · ` +
     (ttc !== null ? `tempo all'arrivo ${ttc.toFixed(1)} s` : "non si avvicina") +
     ` · servono ${SERVONO_S} s → ` +

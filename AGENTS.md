@@ -12,36 +12,35 @@ Fonte di verità: [bando-gara-gattapelata.md](bando-gara-gattapelata.md). Leggil
 
 **Nome:** **Passo Sicuro**. **Slogan:** *"Non vi diciamo se arriva una macchina. Vi diciamo se fate in tempo."*
 
-**Livello 1 – App (PWA), in funzione a T+90' ovunque, anche nei vicoli senza strisce né semafori.** L'anziano apre l'app con un solo pulsante grande. Il telefono è appeso al collo con un porta-telefono, quindi ha le mani libere. La voce dice "Guarda a sinistra", "Guarda a destra", "Guarda avanti", come gli hanno insegnato da bambino, e lui gira il busto. La fotocamera riconosce i veicoli sul telefono stesso. L'app non si limita a segnalare se c'è un veicolo: calcola se la persona **fa in tempo**.
+**Livello 1 – App web: attivazione del canale a T+90' con prerequisiti e prove.** Nessuna piena operatività stradale o copertura di tutti i vicoli dimostrata; la conformità all'Art. 3 resta da validare. Installabilità PWA non attestata. L'anziano apre l'app con un solo pulsante grande. Il telefono è appeso al collo con un porta-telefono, quindi ha le mani libere. La voce dice "Guarda a sinistra", "Guarda a destra", "Guarda avanti", come gli hanno insegnato da bambino, e lui gira il busto. La fotocamera riconosce i veicoli sul telefono stesso. L'app non si limita a segnalare se c'è un veicolo: calcola se la persona **fa in tempo**.
 - *Tempo all'arrivo del veicolo:* stimato da quanto cresce il veicolo nell'inquadratura, senza misurare la distanza.
 - *Tempo che serve a quella persona:* larghezza del vicolo diviso la sua velocità di camminata, più un margine.
 
-Poi dice "Aspetta" oppure "Vai adesso". Durante l'attraversamento lo schermo e il flash lampeggiano, così chi guida lo vede. Non usa il GPS, che nei vicoli non funziona bene.
+La demo simulata dice "Aspetta" oppure "Vai adesso"; il riconoscimento sperimentale non autorizza un attraversamento reale. Durante l'attraversamento lo schermo e il flash lampeggiano, così chi guida lo vede. Non usa il GPS, che nei vicoli non funziona bene.
 
 Opzionale e con consenso: SMS al familiare *"Arrivata viva dall'altra parte"*.
 
 **Motivazione dell'efficacia:**
-- Gli anziani vedono il veicolo ma **sbagliano a stimare velocità e distanza**: scelgono intervalli troppo brevi (studi sulla scelta dei "gap": Oxley et al., Dommes & Cavallo, *da verificare prima di citarli*).
-- Camminano più piano, sentono meno (auto elettriche e monopattini sono silenziosi) e guardano per terra mentre attraversano.
+- Ipotesi da verificare nel pilota: difficoltà nella stima dei tempi, passo personale, percezione dei segnali e ostacoli sul percorso. Non attribuire a queste ipotesi i 342 decessi del bando e non citare studi non verificati.
 
 **Livello 2 – Hardware sugli attraversamenti che esistono già (strisce e semafori).** Viene installato progressivamente nei 48 mesi di gestione, iniziando dagli attraversamenti con più incidenti. **Non è attivo a T+90'** e non va mai dichiarato tale. Si monta su pali e semafori esistenti, senza opere stradali.
-- *Strisce:* lampeggiante LED a energia solare con un sensore di presenza **radar o termico, non telecamere**: non produce immagini identificabili, quindi pesa poco sulla privacy. Il lampeggiante si accende da solo quando qualcuno attraversa, quindi protegge anche chi non ha il telefono. L'app aggiunge il segnale via Bluetooth "sto attraversando, sono lento".
+- *Strisce:* lampeggiante LED a energia solare con un sensore di presenza **radar o termico, non telecamere**: non produce immagini identificabili, quindi pesa poco sulla privacy. Il lampeggiante si accende da solo quando qualcuno attraversa, quindi protegge anche chi non ha il telefono. L'integrazione futura può aggiungere una richiesta autorizzata alla centrale; non dipende dal Bluetooth nel browser e non è implementata nella demo.
 - *Semafori:* un modulo sul regolatore che esiste già. L'app chiama il verde pedonale senza che serva premere il pulsante e **allunga il verde** finché il sensore vede la persona ancora sulle strisce.
-- *Precedenti da verificare:* Green Man+ a Singapore (gli anziani avvicinano una tessera e ottengono più tempo di verde) e i Puffin crossing nel Regno Unito (sensori che allungano la fase pedonale).
+- Non citare precedenti esterni senza fonti verificate; l'hardware del progetto richiede compatibilità e collaudo nel sito.
 
 **Misura (vale i 30 punti):**
-- *Dall'app:* ogni "Aspetta" seguito dal passaggio di un veicolo entro pochi secondi conta come quasi-incidente evitato, registrato in forma anonima.
+- *Dall'app:* contare gli avvisi di attesa; non dimostrano passaggio del veicolo, conflitto o incidente evitato. I contatori della demo sono illustrativi. Protocollo con esposizione, confronto e fonti indipendenti nella relazione.
 - *Dai sensori:* conteggio di attraversamenti e conflitti, indipendente da quante persone usano l'app.
 - *Confronto:* vicoli e incroci con la soluzione contro quelli senza, attivandola gradualmente. Baseline: 342 morti nel 2025.
 
 **Compromesso sul prezzo, da gestire (Persona B):** l'hardware fa salire i costi infrastrutturali, che pesano 20 punti.
 - Limitarlo agli attraversamenti esistenti più pericolosi, con unità economiche da aggiungere all'esistente.
 - Mostrare il costo per singolo attraversamento.
-- Mettere il resto dei 10M in voci non infrastrutturali: gestione, formazione e distribuzione dei porta-telefono, campagna di misura.
+- Importo massimo di piano €10M, non spesa automatica: rendicontazione, quantità validate e tranche. Costo completo prudenziale €3,22M, sviluppo e manutenzione tecnica inclusi; nessun costo nascosto cambiando voce. Dettagli nell'offerta economica.
 
 ## Vincoli del bando che guidano ogni scelta
 
-- **In funzione entro 90 minuti dalla firma** (Art. 3): niente app nativa da store (la review non passa in 90'). Usare PWA/web, SMS, telefonata, dispositivi già esistenti.
+- **In funzione entro 90 minuti dalla firma** (Art. 3): il canale web evita l'attesa dello store; pubblicare un URL non basta a dimostrare affidabilità stradale. Verificare prerequisiti e prove prima della firma. Non dichiarare installabilità PWA non provata.
 - **Anziani con poca dimestichezza tecnologica** (Art. 2): interazione minima. Un pulsante, voce, telefono fisso come alternativa.
 - **Vicoli "così come attualmente sono"** (Art. 2): l'app deve funzionare da sola nei vicoli come sono oggi. L'hardware del Livello 2 si aggiunge soltanto, su attraversamenti, pali e semafori che esistono già, senza opere stradali. Il GPS nei vicoli stretti è impreciso (urban canyon), quindi bisogna prevedere un'alternativa.
 - **Risultato misurabile** (Art. 2 + Art. 5): vite salvate e incidenti evitati, con un metodo di misura esplicito. Baseline: **342 morti nel 2025**.
