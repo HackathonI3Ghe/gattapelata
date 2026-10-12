@@ -74,3 +74,11 @@ Distribuzione dei porta-telefono al collo: in parallelo, non blocca l'avvio.
 | Voce italiana con audio | NON VERIFICATO (provata con voce spenta) |
 | Telefono reale | NON VERIFICATO |
 | Contrasto misurato con strumento | NON VERIFICATO (scelti bianco su rosso #c40000 e su verde #007a33) |
+
+## Slide della presentazione (`demo/slides/index.html`)
+
+- Online: **https://hackathoni3ghe.github.io/gattapelata/slides/** (pubblicate dallo stesso workflow della demo). In locale si aprono con doppio click.
+- Comandi: frecce o Spazio per scorrere, **N** mostra le note del relatore, **F** schermo intero, `#numero` nell'indirizzo apre una slide precisa. Per il PDF: Stampa → Salva come PDF.
+- Il file è generato dai sorgenti delle slide tenuti dalla Persona A: **non modificarlo a mano**, verrebbe sovrascritto.
+- Segnaposto ancora aperti: `[NOME TEAM]` (copertina, chiusura), `[__]` vite salvate all'anno (efficacia), conservazione dei contatori (privacy), tutti gli importi `[€__]` (offerta), dichiarazioni dei requisiti Art. 4. **Persona B:** metti numeri e testi in `docs/offerta-economica.md`, `docs/relazione-tecnica.md` e `docs/pitch.md`; fino alle 19:40 le slide vengono riallineate a quei file ogni 5 minuti.
+- Prova eseguita: generazione delle 15 slide e resa in Chrome (senza interfaccia) delle slide 7 e 13, OK. Non provate: proiettore di sala, stampa in PDF.

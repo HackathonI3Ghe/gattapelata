@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Passo Sicuro – Pitch</title>
+<!-- File generato dai sorgenti dell'artifact delle slide: non modificarlo a mano. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: #0B1220; overflow: hidden; }
+body { font-family: 'Public Sans', Arial, sans-serif; }
+#stage { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px; transform-origin: 0 0; }
+#stage > section { position: absolute; inset: 0; width: 1920px; height: 1080px; overflow: hidden; display: none !important; }
+#stage > section.attiva { display: flex !important; }
+section p, section h1, section h2, section h3, section ul { margin: 0; }
+section ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 12px; }
+section hr { border: 0; margin: 8px 0; }
+section table { width: 100%; border-collapse: collapse; }
+section th { font-weight: 700; padding: 14px 18px; border-bottom: 3px solid #16243A; }
+section td { padding: 14px 18px; border-bottom: 1px solid #DDD5C4; }
+section aside { display: none; }
+#barra { position: fixed; left: 0; right: 0; bottom: 0; display: flex; gap: 8px; align-items: center; justify-content: center;
+  padding: 8px; background: rgba(11,18,32,.85); color: #F6F3EC; font: 16px 'Public Sans', Arial, sans-serif; opacity: 0; transition: opacity .2s; }
+body:hover #barra, #barra:focus-within { opacity: 1; }
+#barra button { font: inherit; color: inherit; background: #16243A; border: 1px solid #3A4B63; border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+#contatore { min-width: 64px; text-align: center; }
+#note { position: fixed; left: 0; right: 0; top: 0; max-height: 40vh; overflow: auto; display: none; padding: 16px 24px;
+  background: rgba(255,253,248,.97); color: #16243A; font: 20px/1.45 'Public Sans', Arial, sans-serif; border-bottom: 3px solid #F2B705; }
+body.con-note #note { display: block; }
+@media print {
+  @page { size: 1920px 1080px; margin: 0; }
+  html, body { overflow: visible; height: auto; background: none; }
+  #stage { position: static; transform: none !important; width: auto; height: auto; }
+  #stage > section { position: relative; display: flex !important; break-after: page; }
+  #barra, #note { display: none !important; }
+}
+</style>
+</head>
+<body>
+<div id="stage">
+<section id="cover" data-transition="fade" style="background:#16243A;color:#F6F3EC;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="position:absolute;right:0;top:0;width:420px;height:1080px;display:flex;flex-direction:row;gap:44px;opacity:0.14">
+<div style="flex:1;background:#F6F3EC"></div>
+<div style="flex:1;background:#F6F3EC"></div>
+<div style="flex:1;background:#F6F3EC"></div>
+<div style="flex:1;background:#F6F3EC"></div>
+</div>
+<p style="font-size:32px;font-weight:600;color:#F2B705;letter-spacing:2px;text-transform:uppercase">Comune di Gattapelata · Gara del 12/10/2026</p>
+<div style="display:flex;flex-direction:column;gap:40px">
+<h1 style="font-family:'Domine', Georgia, serif;font-size:160px;font-weight:700;line-height:1.05;color:#F6F3EC">Passo Sicuro</h1>
+<p style="font-size:44px;line-height:1.35;color:#C9D3E0">Non vi diciamo se arriva una macchina.<br>Vi diciamo se fate in tempo.</p>
+</div>
+<p style="font-size:24px;color:#C9D3E0">[NOME TEAM] · App per l'attraversamento stradale sicuro degli anziani</p>
+<aside>Buonasera. Siamo [NOME TEAM] e vi presentiamo Passo Sicuro: un'app che aiuta gli anziani di Gattapelata ad attraversare i vicoli e ad arrivare vivi dall'altra parte.</aside>
+</section>
+<section id="numero" data-transition="fade" style="background:#F2B705;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:32px">
+<h1 style="font-family:'Domine', Georgia, serif;font-size:400px;font-weight:700;line-height:1;color:#16243A">342</h1>
+<p style="font-size:44px;line-height:1.3;color:#16243A;width:1300px">anziani morti nel 2025 attraversando i vicoli del centro storico di Gattapelata.</p>
+<p style="font-size:24px;color:#16243A">Fonte: premessa del bando di gara.</p>
+<aside>Trecentoquarantadue. Quasi uno al giorno. Non è un problema di app: è un problema di secondi. Ed è da lì che partiamo.</aside>
+</section>
+<section id="problema" data-transition="fade" style="background:#F6F3EC;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#16243A">Perché gli anziani muoiono nei vicoli</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Sbagliano i tempi</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Vedono l'auto, ma stimano male velocità e distanza: scelgono intervalli troppo brevi.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Camminano piano</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Per attraversare servono più secondi di quanti ne immagina chi guida.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Sentono meno</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Auto elettriche e monopattini arrivano in silenzio.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Guardano per terra</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Gradini e sampietrini tolgono lo sguardo dalla strada proprio mentre attraversano.</p>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.4;color:#16243A"><b>E i vicoli restano come sono:</b> niente strisce, niente semafori, GPS impreciso tra muri alti.</p>
+<aside>Gli anziani la macchina la vedono. Il problema è che sbagliano a giudicare se fanno in tempo: è il tema della scelta degli intervalli negli studi sui pedoni anziani (Oxley e colleghi, Dommes e Cavallo: verificare prima di citarli). In più camminano piano, sentono meno e guardano dove mettono i piedi. E il bando ci chiede di lavorare sui vicoli così come sono.</aside>
+</section>
+<section id="idea" data-transition="fade" style="background:#16243A;color:#F6F3EC;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<p style="font-size:32px;font-weight:600;color:#F2B705;letter-spacing:2px;text-transform:uppercase">L'idea</p>
+<h1 style="font-family:'Domine', Georgia, serif;font-size:96px;font-weight:700;line-height:1.15;color:#F6F3EC">Non vi diciamo se arriva una macchina. <span style="color:#F2B705">Vi diciamo se fate in tempo.</span></h1>
+<p style="font-size:32px;line-height:1.4;color:#C9D3E0;width:1400px">Passo Sicuro confronta due tempi: quando arriva il veicolo e quanto serve a quella persona per arrivare dall'altra parte.</p>
+<aside>Qui sta la differenza rispetto a qualunque altra app: non segnaliamo un pericolo generico, calcoliamo se quella persona, con il suo passo, fa in tempo.</aside>
+</section>
+<section id="come" data-transition="fade" style="background:#F6F3EC;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:48px">
+<h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#16243A">Livello 1: l'app, attiva subito ovunque</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<p style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#9A6700">1</p>
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Un tasto</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Telefono appeso al collo, mani libere. Si preme il grande tasto ATTRAVERSO.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<p style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#9A6700">2</p>
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Guarda</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">La voce dice «Guarda a sinistra», «a destra», «avanti». Si gira il busto, come da bambini.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<p style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#9A6700">3</p>
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Calcola</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">La fotocamera riconosce i veicoli sul telefono e stima quando arrivano.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<p style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#9A6700">4</p>
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Decide</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">«Aspetta» oppure «Vai adesso». Mentre attraversa, schermo e flash lampeggiano.</p>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.4;color:#16243A"><b>Niente GPS:</b> funziona anche tra i muri dei vicoli. Con consenso, SMS al familiare: «Arrivata viva dall'altra parte».</p>
+<aside>Il livello 1 è solo l'app, e funziona in tutti i vicoli, anche dove non ci sono né strisce né semafori. L'anziano non deve imparare niente di nuovo: fa il gesto che gli hanno insegnato da bambino, guarda a sinistra e a destra. Il telefono al collo fa il resto. Il lampeggio serve a farlo vedere da chi guida.</aside>
+</section>
+<section id="calcolo" data-transition="fade" style="background:#F6F3EC;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#16243A">Il calcolo: due tempi a confronto</h2>
+<div style="display:flex;flex-direction:row;gap:40px;align-items:center">
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<p style="font-size:32px;line-height:1.4;color:#4A5568">Il veicolo arriva tra</p>
+<p style="font-family:'Domine', Georgia, serif;font-size:120px;font-weight:700;line-height:1.1;color:#16243A">3 s</p>
+<p style="font-size:24px;line-height:1.4;color:#4A5568">Stimato da quanto cresce il veicolo nell'inquadratura: nessuna distanza da misurare.</p>
+</div>
+<p style="font-family:'Domine', Georgia, serif;font-size:120px;font-weight:700;color:#C2410C">&lt;</p>
+<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<p style="font-size:32px;line-height:1.4;color:#4A5568">A Maria, 82 anni, servono</p>
+<p style="font-family:'Domine', Georgia, serif;font-size:120px;font-weight:700;line-height:1.1;color:#16243A">7 s</p>
+<p style="font-size:24px;line-height:1.4;color:#4A5568">Vicolo di 5 m ÷ 0,8 m/s, il suo passo = 6,3 s, più 1 s di margine.</p>
+</div>
+</div>
+<p style="font-size:72px;font-weight:700;line-height:1.2;color:#FFFDF8;background:#C2410C;padding:24px 48px;border-radius:16px;text-align:center">ASPETTA</p>
+<p style="font-size:32px;line-height:1.4;color:#16243A">Quando il tempo basta, la voce dice <b>«Vai adesso»</b>. Ogni «Aspetta» seguito dal passaggio del veicolo è un quasi-incidente evitato, e viene contato.</p>
+<aside>Questo è il cuore tecnico. Non serve misurare la distanza: basta vedere quanto velocemente il veicolo cresce nell'immagine, è un principio classico della visione artificiale chiamato tempo al contatto. Lo confrontiamo con il tempo che serve a quella persona, calcolato sul suo passo. Se non basta: aspetta. E ogni volta che l'app dice aspetta e il veicolo passa davvero, lo contiamo: è la base della nostra misura di efficacia.</aside>
+</section>
+<section id="livello2" data-transition="fade" style="background:#F6F3EC;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#16243A">Livello 2: strisce e semafori</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Sulle strisce</h3>
+<ul style="font-size:28px;line-height:1.4;color:#4A5568">
+<li>Lampeggiante LED a energia solare.</li>
+<li>Sensore radar o termico: si accende da solo, anche per chi non ha il telefono.</li>
+<li>L'app aggiunge il segnale «sto attraversando, sono lento».</li>
+</ul>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Ai semafori</h3>
+<ul style="font-size:28px;line-height:1.4;color:#4A5568">
+<li>Modulo sul regolatore che c'è già.</li>
+<li>L'app chiama il verde: niente pulsante da premere.</li>
+<li>Il verde si allunga finché il sensore vede la persona sulle strisce.</li>
+</ul>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.4;color:#16243A"><b>Non è attivo a T+90':</b> si installa nei 48 mesi di gestione, partendo dagli attraversamenti con più incidenti. Su pali e semafori esistenti, senza opere stradali.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#4A5568">Precedenti: Green Man+ (Singapore), Puffin crossing (Regno Unito).</p>
+<aside>Dove esistono già strisce o semafori aggiungiamo un secondo livello. Il lampeggiante ha un suo sensore, quindi protegge anche chi il telefono non ce l'ha. Usiamo radar, non telecamere: nessuna immagine delle persone. Al semaforo l'app chiede il verde e lo fa durare quanto serve. Non diciamo che è pronto in 90 minuti: lo installiamo progressivamente, prima dove si muore di più. Precedenti reali: a Singapore gli anziani ottengono più verde avvicinando una tessera; nel Regno Unito i Puffin crossing allungano la fase pedonale con sensori. Verificare i dettagli prima della presentazione.</aside>
+</section>
+<section id="demo" data-transition="fade" style="background:#16243A;color:#F6F3EC;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<p style="font-size:32px;font-weight:600;color:#F2B705;letter-spacing:2px;text-transform:uppercase">Demo dal vivo · meno di 60 secondi</p>
+<h1 style="font-family:'Domine', Georgia, serif;font-size:120px;font-weight:700;line-height:1.1;color:#F6F3EC">Maria, 82 anni, attraversa il vicolo.</h1>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<p style="font-size:32px;line-height:1.4;color:#C9D3E0;border-top:4px solid #F2B705;padding:24px 0 0 0"><b style="color:#F6F3EC">La voce</b> che la guida passo per passo.</p>
+<p style="font-size:32px;line-height:1.4;color:#C9D3E0;border-top:4px solid #F2B705;padding:24px 0 0 0"><b style="color:#F6F3EC">Il calcolo</b> che la ferma quando non fa in tempo.</p>
+<p style="font-size:32px;line-height:1.4;color:#C9D3E0;border-top:4px solid #F2B705;padding:24px 0 0 0"><b style="color:#F6F3EC">La strada</b> che si accende e allunga il verde.</p>
+</div>
+<p style="font-size:32px;line-height:1.4;color:#C9D3E0">Provatela dal vostro telefono: <b style="color:#F2B705">hackathoni3ghe.github.io/gattapelata</b></p>
+<aside>Passiamo alla demo. Guardate tre cose: la voce che guida Maria, il calcolo che la ferma quando l'auto arriva troppo presto, e a destra la strada: il lampeggiante si accende e il semaforo le lascia il tempo che le serve. Alla fine il messaggio al figlio. (Regia: Spazio = avanti, R = riavvia, M = voce sì/no.)</aside>
+</section>
+<section id="uso" data-transition="fade" style="background:#F6F3EC;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:32px;font-weight:600;color:#9A6700;letter-spacing:2px;text-transform:uppercase">Criterio 2 · 20 punti</p>
+<h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#16243A">Facilità d'uso: niente da imparare</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Un solo tasto</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">ATTRAVERSO, grande come mezzo schermo.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Voce chiara</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Frasi brevi in italiano. Testo grande, alto contrasto.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Mani libere</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Telefono appeso al collo con un porta-telefono.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Gesto già noto</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Guardare a sinistra e a destra: lo sanno fare da sempre.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Pronto all'uso</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Lo installano familiari, farmacisti o volontari.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;padding:40px;border:1px solid #DDD5C4;border-radius:16px">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Senza telefono</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Il lampeggiante con sensore protegge anche chi non usa l'app.</p>
+</div>
+</div>
+<aside>L'anziano non deve imparare niente. Un tasto, una voce, un gesto che conosce da sempre. L'installazione la fa qualcun altro: un familiare, il farmacista, un volontario. E chi il telefono proprio non lo vuole è comunque protetto dal lampeggiante agli attraversamenti.</aside>
+</section>
+<section id="misura" data-transition="fade" style="background:#F6F3EC;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:32px;font-weight:600;color:#9A6700;letter-spacing:2px;text-transform:uppercase">Criterio 1 · 30 punti</p>
+<h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#16243A">Efficacia: come la misuriamo</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="width:520px;display:flex;flex-direction:column;gap:12px;background:#16243A;padding:40px;border-radius:16px">
+<p style="font-size:32px;line-height:1.4;color:#C9D3E0">Punto di partenza</p>
+<p style="font-family:'Domine', Georgia, serif;font-size:120px;font-weight:700;line-height:1.1;color:#F6F3EC">342</p>
+<p style="font-size:32px;line-height:1.4;color:#C9D3E0">morti nel 2025</p>
+<hr style="border-top:2px solid #3A4B63">
+<p style="font-size:32px;line-height:1.4;color:#C9D3E0">Obiettivo</p>
+<p style="font-size:44px;font-weight:700;line-height:1.2;color:#F2B705">[__] vite salvate all'anno</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:8px;border-top:2px solid #DDD5C4;padding:24px 0 0 0">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Dall'app</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Ogni «Aspetta» seguito dal passaggio di un veicolo entro pochi secondi è un quasi-incidente evitato. Contatore anonimo.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;border-top:2px solid #DDD5C4;padding:24px 0 0 0">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Dai sensori</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Attraversamenti e conflitti contati agli incroci, indipendentemente da quante persone usano l'app.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;border-top:2px solid #DDD5C4;padding:24px 0 0 0">
+<h3 style="font-size:44px;font-weight:700;color:#16243A">Dal confronto</h3>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Vicoli con Passo Sicuro contro vicoli ancora senza, attivati a gruppi. La differenza di morti e incidenti è l'effetto.</p>
+</div>
+</div>
+</div>
+<aside>Il criterio che pesa di più. Partiamo dai 342 morti del 2025. Misuriamo in tre modi: i quasi-incidenti che l'app evita, contati in modo anonimo; i dati dei sensori agli incroci, che non dipendono da quanti usano l'app; e il confronto tra vicoli già coperti e vicoli non ancora coperti, attivandoli a gruppi. Obiettivo: [numero dalla relazione tecnica].</aside>
+</section>
+<section id="tempi" data-transition="fade" style="background:#F6F3EC;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:32px;font-weight:600;color:#9A6700;letter-spacing:2px;text-transform:uppercase">Criterio 4 · 10 punti</p>
+<h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#16243A">Fattibilità: in funzione a T+90'</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:12px;border-top:4px solid #16243A;padding:24px 0 0 0">
+<p style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#9A6700">T+0</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Firma del contratto.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;border-top:4px solid #16243A;padding:24px 0 0 0">
+<p style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#9A6700">T+20'</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">App pubblicata come pagina web sicura (HTTPS) e provata da telefono. Nessuno store da attendere.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;border-top:4px solid #16243A;padding:24px 0 0 0">
+<p style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#9A6700">T+40'</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5568">Link e QR dai canali del Comune. Parte l'installazione assistita: familiari, farmacie, volontari.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;border-top:4px solid #16243A;padding:24px 0 0 0">
+<p style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#1F7A55">T+90'</p>
+<p style="font-size:28px;line-height:1.4;color:#4A5568"><b>In funzione</b> in tutti i vicoli.</p>
+</div>
+</div>
+<div style="background:#16243A;padding:40px;border-radius:16px">
+<p style="font-size:32px;line-height:1.4;color:#F6F3EC"><b style="color:#F2B705">Poi, nei 48 mesi di gestione:</b> lampeggianti e moduli semaforici, a partire dagli attraversamenti con più incidenti.</p>
+</div>
+<aside>Niente app da store: la revisione di Apple e Google non si chiude in 90 minuti. Passo Sicuro è una pagina web installabile, pubblicata in venti minuti. Il Comune manda link e QR via SMS, sito, farmacie e bacheche; familiari, farmacisti e volontari aiutano a installarla e impostano il passo della persona. A T+90 è in funzione. I porta-telefono si distribuiscono in parallelo. L'hardware arriva dopo, e lo diciamo chiaramente.</aside>
+</section>
+<section id="privacy" data-transition="fade" style="background:#F6F3EC;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:32px;font-weight:600;color:#9A6700;letter-spacing:2px;text-transform:uppercase">Criterio 5 · 5 punti</p>
+<h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#16243A">Privacy: i dati restano sul telefono</h2>
+</div>
+<table style="font-size:28px;color:#16243A">
+<tr><th style="width:45%;text-align:left">Dato</th><th style="width:55%;text-align:left">Dove resta</th></tr>
+<tr><td>Immagini della fotocamera</td><td>Solo sul telefono: mai salvate né inviate</td></tr>
+<tr><td>Passo, nome e contatto del familiare</td><td>Solo sul telefono</td></tr>
+<tr><td>Account e posizione GPS</td><td>Nessun account, nessun GPS</td></tr>
+<tr><td>Contatori di attraversamenti e «Aspetta»</td><td>Al Comune, anonimi e aggregati</td></tr>
+<tr><td>Sensori agli incroci</td><td>Radar o termici: nessuna immagine</td></tr>
+<tr><td>SMS al familiare</td><td>Solo con consenso esplicito</td></tr>
+<tr><td>Conservazione dei contatori</td><td>[__] mesi, poi solo totali</td></tr>
+</table>
+<aside>Dati minimi per costruzione: la fotocamera lavora sul telefono e non manda immagini da nessuna parte. Al Comune arrivano solo numeri anonimi, che servono a misurare l'efficacia. Agli incroci usiamo radar, non telecamere, quindi niente videosorveglianza. L'SMS al familiare parte solo con consenso.</aside>
+</section>
+<section id="offerta" data-transition="fade" style="background:#F6F3EC;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:32px;font-weight:600;color:#9A6700;letter-spacing:2px;text-transform:uppercase">Prezzo · 20 punti</p>
+<h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#16243A">Offerta economica</h2>
+</div>
+<div style="display:flex;flex-direction:row;gap:48px">
+<div style="flex:1;display:flex;flex-direction:column">
+<table style="font-size:24px;color:#16243A">
+<tr><th style="width:58%;text-align:left">Voce</th><th style="width:22%;text-align:left">Tipo</th><th style="width:20%;text-align:right">Importo</th></tr>
+<tr><td>App Passo Sicuro: sviluppo e pubblicazione</td><td>Infrastruttura</td><td style="text-align:right">[€__]</td></tr>
+<tr><td>Lampeggianti con sensore radar ([__] × [€__])</td><td>Infrastruttura</td><td style="text-align:right">[€__]</td></tr>
+<tr><td>Moduli sui semafori esistenti ([__] × [€__])</td><td>Infrastruttura</td><td style="text-align:right">[€__]</td></tr>
+<tr><td>Porta-telefono al collo ([__] × [€__])</td><td>[__]</td><td style="text-align:right">[€__]</td></tr>
+<tr><td>Gestione e manutenzione, 48 mesi</td><td>Servizio</td><td style="text-align:right">[€__]</td></tr>
+<tr><td>Formazione e installazione assistita</td><td>Servizio</td><td style="text-align:right">[€__]</td></tr>
+<tr><td>Campagna di misura dell'efficacia</td><td>Servizio</td><td style="text-align:right">[€__]</td></tr>
+<tr style="background:#ECE6D8"><td><b>Totale</b></td><td></td><td style="text-align:right"><b>[€__]</b></td></tr>
+</table>
+</div>
+<div style="width:480px;display:flex;flex-direction:column;gap:12px;background:#16243A;padding:40px;border-radius:16px">
+<p style="font-size:32px;line-height:1.4;color:#C9D3E0">Costi infrastrutturali</p>
+<p style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.1;color:#F2B705">[€__]</p>
+<p style="font-size:24px;line-height:1.4;color:#C9D3E0">Base d'asta: € 10.000.000 IVA esclusa. Il punteggio prezzo considera solo questa voce.</p>
+</div>
+</div>
+<aside>Il punteggio prezzo considera i costi infrastrutturali. Li teniamo bassi: l'app gira sui telefoni che le persone hanno già, e l'hardware va solo sugli attraversamenti più pericolosi, con un costo per singolo attraversamento. Il resto della base d'asta va in gestione, formazione e misura. [Numeri dall'offerta economica del collega.]</aside>
+</section>
+<section id="requisiti" data-transition="fade" style="background:#F6F3EC;color:#16243A;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:32px;font-weight:600;color:#9A6700;letter-spacing:2px;text-transform:uppercase">Art. 4 e Art. 7</p>
+<h2 style="font-family:'Domine', Georgia, serif;font-size:72px;font-weight:700;line-height:1.15;color:#16243A">Requisiti di partecipazione</h2>
+</div>
+<table style="font-size:28px;color:#16243A">
+<tr><th style="width:60%;text-align:left">Requisito</th><th style="width:40%;text-align:left">Dichiarazione</th></tr>
+<tr><td>Requisiti generali per contrattare con la PA</td><td>Posseduti</td></tr>
+<tr><td>Media annua di like su LinkedIn, ultimi tre anni: almeno 5.000.000</td><td>[__]</td></tr>
+<tr><td>Almeno una app usata da nessuno, ma scaricata da molti</td><td>[__]</td></tr>
+<tr><td>Regolamento del Fantamorto 2025-2026</td><td>Nessun residente di Gattapelata in rosa</td></tr>
+</table>
+<aside>Per completezza, i requisiti dell'articolo 4. Li dichiariamo con la massima serietà. E sull'articolo 7: confermiamo di non avere alcun residente di Gattapelata nella nostra rosa del Fantamorto. Nessun conflitto di interessi.</aside>
+</section>
+<section id="chiusura" data-transition="fade" style="background:#16243A;color:#F6F3EC;font-family:'Public Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="position:absolute;right:0;top:0;width:420px;height:1080px;display:flex;flex-direction:row;gap:44px;opacity:0.14">
+<div style="flex:1;background:#F6F3EC"></div>
+<div style="flex:1;background:#F6F3EC"></div>
+<div style="flex:1;background:#F6F3EC"></div>
+<div style="flex:1;background:#F6F3EC"></div>
+</div>
+<p style="font-size:32px;font-weight:600;color:#F2B705;letter-spacing:2px;text-transform:uppercase">Grazie</p>
+<div style="display:flex;flex-direction:column;gap:40px">
+<h1 style="font-family:'Domine', Georgia, serif;font-size:160px;font-weight:700;line-height:1.05;color:#F6F3EC">Passo Sicuro</h1>
+<p style="font-size:44px;line-height:1.35;color:#C9D3E0">Perché tutti, a Gattapelata,<br>arrivino vivi dall'altra parte.</p>
+</div>
+<p style="font-size:24px;color:#C9D3E0">[NOME TEAM] · Domande?</p>
+<aside>Passo Sicuro: in funzione a novanta minuti dalla firma, misurabile dal primo giorno, con l'hardware che arriva dove serve di più. Grazie. Siamo pronti per le domande.</aside>
+</section>
+</div>
+<div id="note" aria-live="polite"></div>
+<nav id="barra" aria-label="Navigazione slide">
+<button id="prec" aria-label="Slide precedente">◀</button>
+<span id="contatore"></span>
+<button id="succ" aria-label="Slide successiva">▶</button>
+<button id="btn-note">Note (N)</button>
+<button id="btn-schermo">Schermo intero (F)</button>
+</nav>
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var slides = Array.prototype.slice.call(stage.children);
+  var note = document.getElementById('note');
+  var contatore = document.getElementById('contatore');
+  var i = 0;
+
+  function adatta() {
+    var s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
+    stage.style.transform = 'scale(' + s + ') translate(-50%, -50%)';
+  }
+  function mostra(n) {
+    i = Math.max(0, Math.min(slides.length - 1, n));
+    slides.forEach(function (el, k) { el.classList.toggle('attiva', k === i); });
+    var aside = slides[i].querySelector('aside');
+    note.textContent = aside ? aside.textContent : '';
+    contatore.textContent = (i + 1) + ' / ' + slides.length;
+    if (location.hash !== '#' + (i + 1)) history.replaceState(null, '', '#' + (i + 1));
+  }
+  function schermoIntero() {
+    if (document.fullscreenElement) document.exitFullscreen();
+    else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+  }
+
+  document.addEventListener('keydown', function (e) {
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Enter') { mostra(i + 1); e.preventDefault(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'Backspace') { mostra(i - 1); e.preventDefault(); }
+    else if (k === 'Home') mostra(0);
+    else if (k === 'End') mostra(slides.length - 1);
+    else if (k === 'n' || k === 'N') document.body.classList.toggle('con-note');
+    else if (k === 'f' || k === 'F') schermoIntero();
+  });
+  document.getElementById('prec').onclick = function () { mostra(i - 1); };
+  document.getElementById('succ').onclick = function () { mostra(i + 1); };
+  document.getElementById('btn-note').onclick = function () { document.body.classList.toggle('con-note'); };
+  document.getElementById('btn-schermo').onclick = schermoIntero;
+
+  var x0 = null;
+  document.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) mostra(dx < 0 ? i + 1 : i - 1);
+    x0 = null;
+  });
+
+  window.addEventListener('resize', adatta);
+  adatta();
+  mostra((parseInt(location.hash.slice(1), 10) || 1) - 1);
+})();
+</script>
+</body>
+</html>

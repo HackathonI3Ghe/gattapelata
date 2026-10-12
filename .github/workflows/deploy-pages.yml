@@ -48,6 +48,10 @@ jobs:
             mkdir -p _site
             cp demo/index.html _site/index.html
           fi
+          if [ -f demo/slides/index.html ]; then
+            mkdir -p _site/slides
+            cp -R demo/slides/. _site/slides/
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
