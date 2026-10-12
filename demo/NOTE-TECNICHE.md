@@ -119,3 +119,17 @@ Nome Team Passo Sicuro provvisorio. Dichiarazioni Art. 4 da documentare; nessun 
 Verifiche in questo task: aritmetica, numero slide, assenza di segnaposto numerici e sintassi dello script. NON VERIFICATO: resa visiva delle slide aggiornate, proiettore, telefono reale, audio; Chrome non controllabile per permessi del computer mancanti. Deploy da verificare dopo il push.
 
 Sincronizzazione: integrato af5ff2c del collega prima del push; revisione delle slide ripetuta sul checkout aggiornato. Nessun conflitto.
+
+### Rifiniture successive della demo (19:36-19:53)
+
+- Barre di confronto "Auto tra 3 s" / "A te servono 7 s": sul telefono al passo 1 e nella scheda "Come decide l'app", con la formula 5 m ÷ 0,8 m/s + 1 s. Lo schermo ASPETTA ripete i due tempi.
+- Spunta verde all'arrivo, omino del logo che avanza nella barra della fase VAI, ingresso animato dei testi a ogni passo. Tolta l'emoji 💡.
+- Scena: sanpietrini, omino del logo nel segnaposto di Maria, cornice gialla quando il lampeggiante è acceso. Sul davanzale c'è una gatta "pelata" con tooltip su Isidoro Miciomanno (gag del bando, utile nel pitch).
+- I contatori usano lo zero senza barra: quello di Atkinson sembrava "Ø".
+- Desktop e proiettore: la colonna strada entra nello schermo sopra la regia, senza salti tra i passi. Sotto gli 800 px di altezza la nota sparisce e l'etichetta dice "Livello 2 · simulato · installato nei 48 mesi".
+- Prove:
+  - risoluzioni 1280×720, 1366×768, 1536×730, 1536×864 e 1920×1080, passi 0, 1, 6 e 7: nessuno scorrimento, nessuna sovrapposizione con la regia (iframe in Chrome);
+  - 360 e 412 px: nessuno scorrimento orizzontale, testo dell'app ≥ 24 px;
+  - flusso completo sul sito pubblicato: 27,5 s;
+  - due revisioni indipendenti (subagenti), proposte applicate.
+- **NON VERIFICATO:** telefono reale, Safari iOS, voce con audio, fotocamera vera.
