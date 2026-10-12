@@ -1,3 +1,13 @@
+# Aggiornamento economico corrente
+
+Costi ricalcolati su richiesta del team: base d’asta €10M; proposta massima stimata €3,43M per 48 mesi, riserva €450.120 inclusa. Costo completo tecnico prudenziale €2.665.000, includendo anche sviluppo e manutenzione necessari; massimo €2.767.500 se tutta la riserva residua serve alla messa in opera. Pilota €224.000 incluso, hardware indossabile €300/unità. I numeri delle versioni precedenti nella cronologia sono superati. Fonte corrente: docs/offerta-economica.md e docs/costi.json.
+
+Slide riallineate mantenendo 16 principali e 2 approfondimenti, concept fotografico, protocollo/limiti e correzioni del collega. Slide 14 riepilogo economico, slide 17 costi unitari e controllo spesa. Demo principale invariata. Verifica aritmetica, sintassi e riferimento immagine; resa browser/proiettore NON VERIFICATA per permessi computer mancanti.
+
+Il vecchio dato economico del brief comune è una versione precedente, segnalata nelle note commerciali. Niente costo nascosto nel prezzo: sviluppo tecnico incluso prudenzialmente, tutti i consumi e la manutenzione visibili, pilota sottoinsieme, riserva non pagamento automatico.
+
+## Cronologia delle verifiche e delle versioni precedenti
+
 # Note tecniche – Passo Sicuro
 
 Nota di passaggio della Persona A (tecnica) per la relazione. Concetto: vedi "Concetto scelto" in `AGENTS.md`.
@@ -157,3 +167,5 @@ Verifica sul codice effettivo in Node con DOM e tempo simulati: flusso completo,
 NON VERIFICATO in questo task: browser disponibile (inventario vuoto e browser iab non disponibile), layout, contrasto, proiettore, voce con audio, telefono reale, camera su strada, operatività Art.3 e requisiti Art.4. Nessuna installabilità PWA o offline attestati.
 
 Massimo prudenziale per il confronto prezzo €3,92M (39,2%), qualora tutta la riserva residua €700k serva alla messa in opera; €3,22M è il costo programmato completo, non un prezzo garantito. Importo totale massimo sempre €10M.
+
+Verifica indipendente della tabella HTML contro costi.json: somme e attribuzioni corrette; 18 ID univoci e asset esistente. Per pubblicazione applicata hackathon-review. Nessuna nuova prova di applicazione, audio o telefono reale.
