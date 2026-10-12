@@ -92,3 +92,18 @@ Distribuzione dei porta-telefono al collo: in parallelo, non blocca l'avvio.
 - Su schermi molto stretti i testi principali si riducono in proporzione (minimo 24 px, tranne la barra del nome). Le animazioni decorative si spengono con "riduci movimento"; il lampeggio resta.
 - Lato strada: intestazione con logo e slogan, scena con colori da centro storico, schede che si illuminano quando l'hardware è attivo. Su desktop il telefono resta sempre interamente visibile.
 - Prove: `node --check` OK; i 40 id usati dal JS sono presenti; stati iniziale, fotocamera, ASPETTA, VAI e arrivo visti a 360 e 412 px (iframe in Chrome) e su desktop, senza testo tagliato. NON VERIFICATO: telefono reale, Safari iOS, voce con audio.
+- Su telefono la barra di regia è una riga compatta in basso, senza coprire il contatore. Su desktop è trasparente come prima. Su schermi desktop bassi (fino a 760 px) la scena si riduce, così le schede restano visibili; la scheda "Dati anonimi" può comunque richiedere uno scorrimento, mentre il telefono resta fisso.
+- Unica eccezione ai 24 px: l'etichetta "Immagine simulata" (13 px), che serve alla commissione e non all'anziano.
+
+### Prova demo dopo il restyling (19:30, sito pubblicato)
+
+| Prova | Esito |
+|---|---|
+| Sito https://hackathoni3ghe.github.io/gattapelata/ con l'ultima versione | OK (Chrome desktop, Windows) |
+| Flusso completo, voce spenta, da ATTRAVERSO all'SMS | OK, **27,5 s** misurati; passi 1→7, contatori a 1, SMS visibile |
+| Riavvia | OK: torna all'inizio, contatori a 0, pulsante visibile, lampeggio spento |
+| Carattere Atkinson Hyperlegible caricato | OK |
+| Errori in console | Nessuno |
+| Revisione indipendente del diff (subagente) | Nessun problema bloccante. Corretti i 2 minori: contrasto del verde (circa 4:1) e regia sopra le schede su desktop |
+| Viewport 360×740 e 412×860 (iframe) | OK: nessuno scorrimento orizzontale, regia su una riga, ATTRAVERSO entra nel pulsante |
+| Fotocamera vera, voce con audio, telefono reale, Safari iOS | NON VERIFICATO in questo giro (JS della fotocamera non modificato) |
