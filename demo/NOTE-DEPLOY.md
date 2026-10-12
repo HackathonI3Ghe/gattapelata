@@ -144,4 +144,6 @@ Il traguardo di questa fase è una demo raggiungibile dal telefono. Il deploy st
 
 ## Stato della configurazione
 
-Questa nota contiene la proposta e il workflow da applicare. Non sono ancora stati creati l'app React o il workflow effettivo, né attivato Pages. Persona A possiede `demo/`; il responsabile del deploy gestisce `.github/` e le impostazioni GitHub. Persona B può usare questa nota per descrivere distribuzione e fattibilità nei documenti di gara.
+È presente un workflow effettivo in `.github/workflows/deploy-pages.yml`, attivato dai push su `main` che modificano `demo/` o il workflow e avviabile anche manualmente. Per la prima prova pubblica la demo HTML dei colleghi copiando soltanto `demo/index.html`. Quando sarà presente `demo/package.json`, eseguirà invece `npm ci` e `npm run build`, pubblicando solo `demo/dist`: occorrono il lockfile e la configurazione Vite descritta sopra. Se la build fallisce, il deploy si interrompe.
+
+L'app React resta da realizzare; il primo deploy usa la demo esistente senza modificarla. L'utente riferisce di aver abilitato Pages; l'esito della pubblicazione va controllato in Actions e aprendo il sito. Persona A possiede `demo/` e `.github/workflows/`. Persona B può usare questa nota per descrivere distribuzione e fattibilità nei documenti di gara.

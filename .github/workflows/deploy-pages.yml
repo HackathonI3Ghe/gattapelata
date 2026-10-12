@@ -1,0 +1,57 @@
+name: Pubblica demo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'demo/**'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Prepara Node per la build React
+        if: ${{ hashFiles('demo/package.json') != '' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: demo/package-lock.json
+      - name: Prepara il sito
+        shell: bash
+        run: |
+          if [ -f demo/package.json ]; then
+            cd demo
+            npm ci
+            npm run build
+            test -f dist/index.html
+            cd ..
+            mkdir -p _site
+            cp -R demo/dist/. _site/
+          else
+            test -f demo/index.html
+            mkdir -p _site
+            cp demo/index.html _site/index.html
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Pubblica
+        id: deployment
+        uses: actions/deploy-pages@v4
