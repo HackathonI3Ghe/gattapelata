@@ -36,3 +36,5 @@ Revisione ripetuta dopo integrazione del commit af5ff2c del collega (barre di co
 Checkpoint aggiornato: asset fotografico generato con IA e traguardo 330/342. Immagine ispezionata nell’output, non prova dell’esistenza del dispositivo. Slide in Chrome e proiettore NON VERIFICATE.
 
 Riesaminato dopo integrazione ed505d6: cambia il layout della demo principale, non i numeri o gli asset delle slide. Checkpoint delle slide confermato; verifica visiva della demo del collega non ripetuta.
+
+Risoluzione manuale del conflitto con a5b02d2: conservate sia le rifiniture e prove del collega sia la nota sul concept. Riletti i blocchi integrati; asset e obiettivo 330/342 invariati. Revisione confermata sul rebase completato.

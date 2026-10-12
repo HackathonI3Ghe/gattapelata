@@ -143,3 +143,5 @@ Slide 11: 330 vite/anno su baseline 342 = 96,5%, obiettivo aspirazionale a regim
 Verifiche: immagine ispezionata nell'output imagegen, file e riferimento relativo presenti, 16 slide, sintassi script e aritmetica controllate. Resa delle slide in Chrome e proiettore NON VERIFICATA: permessi del computer mancanti. Demo principale invariata.
 
 Prima del push integrato ed505d6 del collega (layout strada della demo su desktop). Nessun conflitto con slide o immagine; revisione ripetuta sul checkout aggiornato.
+
+Conflitto con a5b02d2 risolto manualmente preservando entrambe le sezioni: rifiniture del collega e concept fotografico. Rebase completato; numeri e immagine delle slide ricontrollati.
