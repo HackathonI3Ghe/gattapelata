@@ -10,7 +10,7 @@ Fonte di verità: [bando-gara-gattapelata.md](bando-gara-gattapelata.md). Leggil
 
 ## Concetto scelto
 
-**Nome:** TODO. **Slogan:** *"Non vi diciamo se arriva una macchina. Vi diciamo se fate in tempo."*
+**Nome:** **Passo Sicuro**. **Slogan:** *"Non vi diciamo se arriva una macchina. Vi diciamo se fate in tempo."*
 
 **Livello 1 – App (PWA), in funzione a T+90' ovunque, anche nei vicoli senza strisce né semafori.** L'anziano apre l'app con un solo pulsante grande. Il telefono è appeso al collo con un porta-telefono, quindi ha le mani libere. La voce dice "Guarda a sinistra", "Guarda a destra", "Guarda avanti", come gli hanno insegnato da bambino, e lui gira il busto. La fotocamera riconosce i veicoli sul telefono stesso. L'app non si limita a segnalare se c'è un veicolo: calcola se la persona **fa in tempo**.
 - *Tempo all'arrivo del veicolo:* stimato da quanto cresce il veicolo nell'inquadratura, senza misurare la distanza.
