@@ -107,3 +107,13 @@ Distribuzione dei porta-telefono al collo: in parallelo, non blocca l'avvio.
 | Revisione indipendente del diff (subagente) | Nessun problema bloccante. Corretti i 2 minori: contrasto del verde (circa 4:1) e regia sopra le schede su desktop |
 | Viewport 360×740 e 412×860 (iframe) | OK: nessuno scorrimento orizzontale, regia su una riga, ATTRAVERSO entra nel pulsante |
 | Fotocamera vera, voce con audio, telefono reale, Safari iOS | NON VERIFICATO in questo giro (JS della fotocamera non modificato) |
+
+## Numeri e alternativa indossabile nelle slide pubblicate
+
+Su richiesta del team sono aggiornate le 16 slide HTML, mantenendo il design esistente. Nuova slide 10: alternativa autonoma al telefono sul petto con una camera, computer, batteria, voce e vibrazione. Solo fase 2 dopo T+90', pilota controllato su 100 persone prima di estendere fino a 1.000 utenti. Il dispositivo non esiste ancora; non viene dichiarata visione a 360°. La pagina animata è stata esclusa dalla consegna per l'ultima indicazione dell'utente.
+
+Importi da docs/offerta-economica.md: € 350/unità (fascia stimata € 250–400), pilota € 250.000 già incluso, totale € 10 milioni, infrastruttura € 1,24 milioni incluse riserve, 12,4%. Scenario di circa 17 vite/anno condizionato a −5% della baseline; non previsione validata. Obiettivo pilota −15% conflitti per 1.000 attraversamenti. Avvisi descritti come indicatori candidati di rischio, non incidenti certamente evitati. Durata conservazione proposta: 30 giorni eventi e 48 mesi aggregati, da motivare nella progettazione privacy.
+
+Nome Team Passo Sicuro provvisorio. Dichiarazioni Art. 4 da documentare; nessun dato storico inventato. Relazione tecnica ancora da allineare dal ruolo commerciale. I sorgenti artifact del collega non sono nel repository: è aggiornata la copia HTML pubblicata, con istruzione di portare i numeri nei sorgenti prima di rigenerare, altrimenti si perdono. Non modificata la demo principale.
+
+Verifiche in questo task: aritmetica, numero slide, assenza di segnaposto numerici e sintassi dello script. NON VERIFICATO: resa visiva delle slide aggiornate, proiettore, telefono reale, audio; Chrome non controllabile per permessi del computer mancanti. Deploy da verificare dopo il push.
