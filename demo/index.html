@@ -330,6 +330,10 @@
       <linearGradient id="muroSu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c66d3e"/><stop offset="1" stop-color="#97492a"/></linearGradient>
       <linearGradient id="muroGiu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c99843"/><stop offset="1" stop-color="#a5772d"/></linearGradient>
       <linearGradient id="asfalto" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#363940"/><stop offset="1" stop-color="#282a30"/></linearGradient>
+      <pattern id="sampietrini" width="16" height="16" patternUnits="userSpaceOnUse">
+        <rect x="1" y="1" width="6.5" height="6.5" rx="2" fill="#41454d"/><rect x="8.5" y="1" width="6.5" height="6.5" rx="2" fill="#3b3f47"/>
+        <rect x="1" y="8.5" width="6.5" height="6.5" rx="2" fill="#3b3f47"/><rect x="8.5" y="8.5" width="6.5" height="6.5" rx="2" fill="#41454d"/>
+      </pattern>
     </defs>
     <g clip-path="url(#scena)">
     <rect x="0" y="0" width="600" height="100" fill="url(#muroSu)"/>
@@ -349,6 +353,7 @@
     <text x="300" y="18" fill="#fff" font-size="14" text-anchor="middle" font-family="Arial, sans-serif">Centro storico di Gattapelata · vicolo con strisce esistenti</text>
     <rect x="0" y="100" width="600" height="20" fill="#b9b2a6"/>
     <rect x="0" y="120" width="600" height="200" fill="url(#asfalto)"/>
+    <rect x="0" y="120" width="600" height="200" fill="url(#sampietrini)" opacity=".8"/>
     <rect x="0" y="320" width="600" height="20" fill="#b9b2a6"/>
     <rect x="0" y="118" width="600" height="3" fill="#7d776d"/><rect x="0" y="319" width="600" height="3" fill="#7d776d"/>
     <rect x="0" y="340" width="600" height="100" fill="url(#muroGiu)"/>
@@ -383,7 +388,12 @@
     <!-- anziana -->
     <g id="sPed">
       <circle cx="300" cy="330" r="21" fill="rgba(255,214,0,.3)"/>
-      <circle cx="300" cy="330" r="12" fill="#ffd600" stroke="#000" stroke-width="3"/>
+      <circle cx="300" cy="330" r="13" fill="#ffd600" stroke="#000" stroke-width="2.5"/>
+      <g transform="translate(300 331) scale(.4) translate(-35 -25)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="35" cy="9.6" r="5.4" fill="#000" stroke="none"/>
+        <path d="M33.2 18.8L30 30.8L23.6 41M30 30.8L37.2 35.2L38.8 42M32.8 20.8L39.6 26L44.8 27.6M32.8 20.8L26.8 25.6L24.4 30.8" stroke-width="5.4"/>
+        <path d="M44.8 27.6L46.8 42" stroke-width="3.6"/>
+      </g>
       <text id="sPedNome" x="300" y="310" text-anchor="middle" fill="#fff" stroke="#000" stroke-width="4" paint-order="stroke" font-size="16" font-weight="700" font-family="Arial, sans-serif"></text>
     </g>
     </g>
