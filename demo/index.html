@@ -107,7 +107,8 @@
     position: absolute; z-index: 3; top: 12px; left: 50%; transform: translateX(-50%);
     background: rgba(0,0,0,.66); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
     border: 1px solid rgba(255,255,255,.2); padding: 5px 18px; border-radius: 999px;
-    font-size: 28px; font-weight: 700; white-space: nowrap;
+    font-size: 28px; font-size: min(28px, 8cqw); font-weight: 700; white-space: nowrap;
+    max-width: calc(100% - 24px); overflow: hidden; text-overflow: ellipsis;
   }
   .simtag {
     position: absolute; z-index: 3; left: 24px; bottom: 22px;
