@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0b0e16">
+<meta name="color-scheme" content="dark">
 <meta name="description" content="Passo Sicuro: non vi diciamo se arriva una macchina, vi diciamo se fate in tempo.">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,6 +24,7 @@
   * { box-sizing: border-box; }
   [hidden] { display: none !important; }
   html, body { margin: 0; }
+  html { overscroll-behavior-y: none; }
   body {
     background:
       radial-gradient(900px 620px at 8% -8%, rgba(255,214,0,.13), transparent 62%),
@@ -39,7 +41,7 @@
     position: sticky; top: 16px; flex: none;
     height: min(860px, calc(100vh - 32px)); aspect-ratio: 9 / 19;
     border: 11px solid #14171e; border-radius: 54px; background: #000;
-    overflow: hidden;
+    overflow: hidden; -webkit-user-select: none; user-select: none;
     box-shadow: 0 0 0 2px #3a404c, 0 0 0 6px #0b0d12, 0 40px 90px -24px rgba(0,0,0,.9), 0 0 160px rgba(255,214,0,.08);
   }
   .phone::before {
@@ -124,7 +126,7 @@
     position: relative; flex: 1 1 auto; min-height: 180px; border: none; border-radius: 34px;
     background: linear-gradient(180deg, #ffe45a 0%, #ffd600 52%, #f2c200 100%);
     color: #000; font: inherit; font-size: 46px; font-size: min(46px, 12.5cqw); font-weight: 700;
-    cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    cursor: pointer; touch-action: manipulation; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
     box-shadow: 0 10px 0 var(--yellow-d), 0 24px 50px rgba(255,214,0,.28), inset 0 2px 0 rgba(255,255,255,.65);
   }
   .btn-main .ico { width: 96px; height: 96px; flex: none; }
