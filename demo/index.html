@@ -223,6 +223,10 @@
   .card.on { border-color: var(--yellow); background-color: rgba(255,214,0,.08); box-shadow: 0 0 0 1px var(--yellow), 0 0 30px rgba(255,214,0,.16); }
   .card h3 { margin: 0 0 4px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .09em; }
   .card .v { font-size: 19px; font-weight: 700; line-height: 1.3; }
+  #vDati { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; }
+  .kpi { display: inline-flex; align-items: baseline; gap: 7px; color: var(--muted); font-size: 15px; font-weight: 700; }
+  .kpi b { font-size: 28px; line-height: 1; }
+  .privacy { margin-left: auto; font-size: 13px; font-weight: 700; color: #b9f6ca; background: rgba(105,240,174,.1); border: 1px solid rgba(105,240,174,.35); border-radius: 999px; padding: 3px 10px; }
   .v .rosso { color: #ff6b6b; } .v .verde { color: #69f0ae; } .v .giallo { color: var(--yellow); }
   .blink { animation: blink .5s steps(1) infinite; }
   @keyframes blink { 50% { opacity: .12; } }
@@ -612,8 +616,9 @@ function semaforoVerde() {
 function decisione(html) { $("vDec").innerHTML = html; }
 function aggiornaDati(pop) {
   $("cntQuasi").textContent = nQuasi;
-  $("vDati").innerHTML = `Attraversamenti assistiti: <span class="giallo">${nAttraversamenti}</span> · ` +
-    `Quasi-incidenti evitati: <span class="giallo">${nQuasi}</span> · nessuna immagine, nessun nome`;
+  $("vDati").innerHTML = `<span class="kpi"><b class="giallo">${nAttraversamenti}</b> attraversamenti assistiti</span>` +
+    `<span class="kpi"><b class="giallo">${nQuasi}</b> quasi-incidenti evitati</span>` +
+    `<span class="privacy">nessuna immagine · nessun nome</span>`;
   if (pop) {
     const c = $("counter"); c.classList.remove("pop"); void c.offsetWidth; c.classList.add("pop");
   }
