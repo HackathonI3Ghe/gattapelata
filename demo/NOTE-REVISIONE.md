@@ -34,3 +34,5 @@ Esito: ACCETTATO
 Revisione ripetuta dopo integrazione del commit af5ff2c del collega (barre di confronto nella demo principale). Le modifiche alle slide e i numeri restano coerenti con il pitch e l’offerta; nessun conflitto. Non ripetute le prove funzionali della demo del collega. Solo checkpoint delle slide: non una certificazione di affidabilità stradale o conformità privacy. Numeri sono stime e ipotesi dichiarate; relazioni, requisiti e prove manuali restano pendenti.
 
 Checkpoint aggiornato: asset fotografico generato con IA e traguardo 330/342. Immagine ispezionata nell’output, non prova dell’esistenza del dispositivo. Slide in Chrome e proiettore NON VERIFICATE.
+
+Riesaminato dopo integrazione ed505d6: cambia il layout della demo principale, non i numeri o gli asset delle slide. Checkpoint delle slide confermato; verifica visiva della demo del collega non ripetuta.
