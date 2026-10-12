@@ -105,6 +105,7 @@
     @keyframes flashInset { 0% { box-shadow: inset 0 0 0 10px #fff; } 50% { box-shadow: inset 0 0 0 10px var(--yellow); } }
     .strada { flex: none; width: 100%; padding: 0 16px 64px; }
     .cards { grid-template-columns: 1fr; }
+    .regia span { display: none; }
   }
 </style>
 </head>
@@ -194,7 +195,7 @@
     <!-- anziana -->
     <g id="sPed">
       <circle cx="300" cy="330" r="12" fill="#ffd600" stroke="#000" stroke-width="3"/>
-      <text id="sPedNome" x="318" y="336" fill="#fff" font-size="16" font-weight="700" font-family="Arial, sans-serif"></text>
+      <text id="sPedNome" x="300" y="310" text-anchor="middle" fill="#fff" font-size="16" font-weight="700" font-family="Arial, sans-serif"></text>
     </g>
     </g>
   </svg>
@@ -216,7 +217,7 @@
 
 <script>
 // ---------- Configurazione (il nome si cambia qui) ----------
-const NOME_APP = "SetteVite";
+const NOME_APP = "Passo Sicuro";
 const UTENTE = "Maria";
 const FAMILIARE = "Luca (figlio)";
 const LARGHEZZA_M = 5;      // larghezza del vicolo
