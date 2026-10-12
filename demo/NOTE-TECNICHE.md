@@ -12,9 +12,9 @@ Nota di passaggio della Persona A (tecnica) per la relazione. Concetto: vedi "Co
   3. Sinistra libera, destra libera, avanti libero.
   4. Schermo verde **VAI ADESSO**, il telefono lampeggia (bianco/giallo). In strada si accendono i lampeggianti LED, il radar vede la persona sulle strisce, il semaforo pedonale dà il verde con **+8 s per attraversamento lento**.
   5. "Sei arrivata dall'altra parte" e SMS finto al figlio: "Mamma è arrivata viva dall'altra parte ✓".
-- **Regia** (in basso a destra, poco visibile): Spazio = avanti/avvia, R = riavvia e azzera i contatori, M = voce sì/no. A fine flusso Spazio torna all'inizio mantenendo i contatori.
+- **Regia** (in basso a destra, poco visibile): Spazio = avanti/avvia, R = riavvia e azzera i contatori, M = voce sì/no, C = fotocamera vera. A fine flusso Spazio torna all'inizio mantenendo i contatori.
 - **Voce:** `speechSynthesis` in italiano (`it-IT`), parte solo dopo il primo click o tasto. Se la voce non c'è, la demo prosegue lo stesso.
-- **Fotocamera vera:** non inclusa in questa demo. È tutto simulato.
+- **Fotocamera vera (facoltativa, tasto C o pulsante 📷):** TensorFlow.js 4.22.0 + COCO-SSD 2.2.3 da CDN, caricati solo quando si attiva. Riconosce auto, camion, bus, moto e bici, disegna i riquadri, stima il tempo all'arrivo dalla crescita del riquadro e mostra ASPETTA / Libero con la voce. Serve HTTPS o `localhost` e la rete. Il primo caricamento del modello richiede circa 13 secondi: attivarla una volta prima della presentazione. Se fotocamera, rete o modello non sono disponibili, la demo torna da sola alla simulazione.
 
 ## Architettura in produzione
 
@@ -67,6 +67,9 @@ Distribuzione dei porta-telefono al collo: in parallelo, non blocca l'avvio.
 | Durata del flusso senza voce | 27,5 s misurati |
 | Vista telefono a 390 px di larghezza (iframe in Chrome) | OK: telefono a tutto schermo, nessuno scorrimento orizzontale, testo minimo 24 px, "ASPETTA" non tagliato |
 | Contatori (quasi-incidenti e attraversamenti) | OK, salgono a 1 a fine flusso |
+| Fotocamera negata o assente | OK: messaggio "Fotocamera non disponibile" e ritorno alla simulazione |
+| Caricamento TensorFlow.js + COCO-SSD da CDN | OK in 12,7 s (backend WebGL), nessun errore |
+| Riconoscimento di veicoli veri con fotocamera | NON VERIFICATO (nessuna fotocamera nell'ambiente di prova) |
 | Apertura con doppio click (`file://`) | NON VERIFICATO (nessuna dipendenza esterna, quindi atteso OK) |
 | Voce italiana con audio | NON VERIFICATO (provata con voce spenta) |
 | Telefono reale | NON VERIFICATO |

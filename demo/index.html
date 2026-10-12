@@ -44,6 +44,8 @@
   .screen.rosso .bar .nome, .screen.verde .bar .nome { color: #fff; }
   .cam { position: relative; flex: 1 1 auto; min-height: 0; border: 3px solid #fff; border-radius: 18px; overflow: hidden; }
   .cam svg { width: 100%; height: 100%; display: block; }
+  .cam video, .cam canvas { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cam.live svg { visibility: hidden; }
   .camlabel {
     position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
     background: rgba(0,0,0,.78); padding: 4px 14px; border-radius: 12px;
@@ -212,7 +214,8 @@
   <button id="bAvanti" type="button">⏭ Avanti</button>
   <button id="bRiavvia" type="button">↺ Riavvia</button>
   <button id="bVoce" type="button"></button>
-  <span>Spazio = avanti · R = riavvia · M = voce</span>
+  <button id="bCamera" type="button">📷 Fotocamera</button>
+  <span>Spazio = avanti · R = riavvia · M = voce · C = fotocamera</span>
 </div>
 
 <script>
@@ -462,7 +465,7 @@ const PASSI = [
 ];
 
 function vaiA(i) {
-  gen++; fermaTimer();
+  gen++; fermaTimer(); fermaCamera();
   passo = i;
   const p = PASSI[i];
   p.entra();
@@ -488,15 +491,142 @@ function cambiaVoce() {
   aggiornaBottoneVoce();
 }
 
+// ---------- Fotocamera vera (facoltativa: serve HTTPS o localhost e la rete) ----------
+// Se qualcosa non va si torna alla simulazione, che resta la modalità principale.
+const CDN_TF = "https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js";
+const CDN_COCO = "https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js";
+const VEICOLI = { car: "AUTO", truck: "CAMION", bus: "BUS", motorcycle: "MOTO", bicycle: "BICI" };
+let cam = null, modello = null;
+
+function caricaScript(src) {
+  return new Promise((ok, ko) => {
+    if (document.querySelector(`script[src="${src}"]`)) return ok();
+    const el = document.createElement("script");
+    el.src = src; el.onload = ok; el.onerror = () => ko(new Error("rete o CDN non raggiungibile"));
+    document.head.appendChild(el);
+  });
+}
+function conTimeout(p, ms) {
+  return Promise.race([p, new Promise((_, ko) => setTimeout(() => ko(new Error("tempo scaduto")), ms))]);
+}
+function fermaCamera() {
+  if (!cam) return;
+  cam.stream.getTracks().forEach((t) => t.stop());
+  cam.video.remove(); cam.canvas.remove();
+  $("cam").classList.remove("live");
+  cam = null;
+}
+async function avviaCamera() {
+  vaiA(0); gen++; fermaTimer();
+  const g = gen;
+  ui({ cam: "📷 FOTOCAMERA", big: "Preparo la fotocamera…" });
+  decisione("Fotocamera vera: riconoscimento dei veicoli sul telefono (TensorFlow.js, COCO-SSD). Nessuna immagine esce dal dispositivo.");
+  let stream = null;
+  try {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) throw new Error("serve HTTPS o localhost");
+    stream = await conTimeout(navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" }, audio: false }), 20000);
+    if (g !== gen) { stream.getTracks().forEach((t) => t.stop()); return; }
+    const video = document.createElement("video");
+    video.playsInline = true; video.muted = true; video.srcObject = stream;
+    const canvas = document.createElement("canvas");
+    $("cam").prepend(canvas); $("cam").prepend(video); $("cam").classList.add("live");
+    cam = { stream, video, canvas, storia: [], stato: "", senza: 0, ultimaVoce: 0 };
+    await video.play();
+    if (!modello) {
+      $("big").textContent = "Carico il riconoscimento…";
+      await conTimeout(caricaScript(CDN_TF), 25000);
+      await conTimeout(caricaScript(CDN_COCO), 25000);
+      modello = await conTimeout(cocoSsd.load({ base: "lite_mobilenet_v2" }), 40000);
+    }
+    if (g !== gen || !cam) return;
+    $("big").textContent = "Guarda a sinistra";
+    parla("Guarda a sinistra.");
+    cicloCamera(g);
+  } catch (e) {
+    if (stream && !cam) stream.getTracks().forEach((t) => t.stop());
+    if (g !== gen) return;
+    fermaCamera();
+    ui({ big: "Fotocamera non disponibile", sub: "Torno alla simulazione." });
+    decisione(`Fotocamera non disponibile (${e.message}): torno alla modalità simulata.`);
+    dopo(() => vaiA(0), 2500);
+  }
+}
+async function cicloCamera(g) {
+  if (g !== gen || !cam) return;
+  let pred = [];
+  try { pred = await modello.detect(cam.video); } catch (e) { pred = []; }
+  if (g !== gen || !cam) return;
+  const veicoli = pred.filter((p) => VEICOLI[p.class] && p.score > 0.5);
+  disegnaRiquadri(veicoli);
+  const piuGrande = veicoli.sort((a, b) => b.bbox[2] * b.bbox[3] - a.bbox[2] * a.bbox[3])[0];
+  valutaCamera(piuGrande);
+  setTimeout(() => cicloCamera(g), 120);
+}
+function disegnaRiquadri(lista) {
+  const c = cam.canvas, w = $("cam").clientWidth, h = $("cam").clientHeight;
+  if (c.width !== w || c.height !== h) { c.width = w; c.height = h; }
+  const ctx = c.getContext("2d"); ctx.clearRect(0, 0, w, h);
+  const vw = cam.video.videoWidth, vh = cam.video.videoHeight;
+  if (!vw || !vh) return;
+  const k = Math.max(w / vw, h / vh), ox = (w - vw * k) / 2, oy = (h - vh * k) / 2;
+  ctx.lineWidth = 4; ctx.font = "900 18px Arial, sans-serif";
+  lista.forEach((p) => {
+    const [x, y, bw, bh] = p.bbox, X = ox + x * k, Y = oy + y * k;
+    ctx.strokeStyle = "#ffd600"; ctx.strokeRect(X, Y, bw * k, bh * k);
+    ctx.fillStyle = "#ffd600"; ctx.fillRect(X, Math.max(0, Y - 24), 84, 24);
+    ctx.fillStyle = "#000"; ctx.fillText(VEICOLI[p.class], X + 6, Math.max(18, Y - 6));
+  });
+}
+// tempo al contatto = altezza del riquadro ÷ velocità con cui cresce
+function valutaCamera(v) {
+  const ora = performance.now(), H = cam.video.videoHeight || 1;
+  if (v) { cam.storia.push({ t: ora, h: v.bbox[3] / H }); cam.senza = 0; } else cam.senza++;
+  cam.storia = cam.storia.filter((x) => ora - x.t < 1500);
+  let stato, ttc = null;
+  if (!v) stato = cam.senza > 5 ? "libero" : (cam.stato || "libero");
+  else {
+    const s = cam.storia;
+    if (s.length >= 3) {
+      const a = s[0], b = s[s.length - 1], dt = (b.t - a.t) / 1000, dh = b.h - a.h;
+      if (dt > 0.3 && dh > 0) ttc = b.h / (dh / dt);
+    }
+    const vicino = v.bbox[3] / H > 0.45;
+    stato = (vicino || (ttc !== null && ttc < SERVONO_S)) ? "aspetta" : "lontano";
+  }
+  if (stato !== cam.stato) {
+    if (cam.stato === "aspetta" && stato === "libero") { nQuasi++; aggiornaDati(true); }
+    cam.stato = stato;
+    const voce = ora - cam.ultimaVoce > 2000;
+    if (stato === "aspetta") {
+      ui({ bg: "rosso", cam: "📷 FOTOCAMERA", big: "✋ ASPETTA" });
+      if (voce) { parla("Aspetta. Arriva un veicolo."); cam.ultimaVoce = ora; }
+    } else if (stato === "lontano") {
+      ui({ cam: "📷 FOTOCAMERA", big: "Veicolo lontano" });
+    } else {
+      ui({ bg: "verde", cam: "📷 FOTOCAMERA", big: "Libero ✓" });
+      if (voce) { parla("Libero."); cam.ultimaVoce = ora; }
+    }
+  }
+  const arrivo = ttc !== null ? `Arrivo tra <b>${Math.round(ttc)} s</b> · ` : "";
+  $("sub").innerHTML = stato === "libero" ? "" : `${arrivo}A te servono <b>${SERVONO_S} s</b>`;
+  if (stato === "libero") decisione("Fotocamera: nessun veicolo inquadrato.");
+  else decisione(`${v ? VEICOLI[v.class] : "Veicolo"} inquadrato · ` +
+    (ttc !== null ? `tempo all'arrivo ${ttc.toFixed(1)} s` : "non si avvicina") +
+    ` · servono ${SERVONO_S} s → ` +
+    (stato === "aspetta" ? '<span class="rosso">ASPETTA</span>' : "attendo che si avvicini o si allontani"));
+}
+
 $("btnStart").addEventListener("click", (e) => { e.currentTarget.blur(); vaiA(1); });
 $("bAvanti").addEventListener("click", (e) => { e.currentTarget.blur(); avanti(); });
 $("bRiavvia").addEventListener("click", (e) => { e.currentTarget.blur(); riavvia(); });
 $("bVoce").addEventListener("click", (e) => { e.currentTarget.blur(); cambiaVoce(); });
+$("bCamera").addEventListener("click", (e) => { e.currentTarget.blur(); avviaCamera(); });
 document.addEventListener("keydown", (e) => {
   if (e.repeat) return;
   if (e.code === "Space") { e.preventDefault(); avanti(); }
   else if (e.key === "r" || e.key === "R") riavvia();
   else if (e.key === "m" || e.key === "M") cambiaVoce();
+  else if (e.key === "c" || e.key === "C") avviaCamera();
 });
 
 aggiornaDati();
