@@ -240,7 +240,6 @@
   .regia button:hover { background: rgba(255,255,255,.18); }
 
   @media (min-width: 821px) and (max-height: 760px) {
-    .strada .scena { width: min(100%, calc(34vh * 600 / 440)); }
     .marchio .logo { width: 44px; height: 44px; }
     .marchio h1 { font-size: 28px; }
   }
@@ -256,6 +255,23 @@
       background: rgba(10,13,20,.75); border: 1px solid var(--line); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
     .regia button { flex: 1 1 auto; min-width: 0; padding: 7px 5px; font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .regia span { display: none; }
+  }
+  /* desktop e proiettore: la colonna strada sta tutta nello schermo, sopra la regia, senza salti tra i passi */
+  @media (min-width: 821px) {
+    .strada { padding-bottom: 46px; }
+    .strada .scena { width: min(100%, calc(clamp(190px, 100vh - 578px, 42vh) * 600 / 440)); }
+    .cards { gap: 8px; }
+    .card { padding: 8px 12px; }
+    .card .v { font-size: 17px; line-height: 1.25; }
+    .cards > .card:not(.wide) { min-height: 96px; }
+    #cDec { min-height: 124px; }
+    .card.wide { min-height: 64px; }
+    .confronto.largo { font-size: 15px; gap: 5px; margin-bottom: 6px; }
+    .confronto.largo .riga { padding: 3px 10px; }
+  }
+  @media (min-width: 821px) and (max-height: 800px) {
+    .strada .nota { display: none; }
+    .strada .scena { width: min(100%, calc(clamp(190px, 100vh - 520px, 42vh) * 600 / 440)); }
   }
 </style>
 </head>
@@ -330,7 +346,7 @@
       <p class="slogan">«Non vi diciamo se arriva una macchina. Vi diciamo se fate in tempo.»</p>
     </div>
   </header>
-  <h2><span class="eyebrow">Livello 2 · simulato</span> Lato strada</h2>
+  <h2><span class="eyebrow">Livello 2 · simulato · installato nei 48 mesi</span> Lato strada</h2>
   <p class="nota">A sinistra l'app <b data-nome></b> (Livello 1, attiva a T+90' in tutti i vicoli).
     Qui il Livello 2: hardware montato su strisce e semafori che esistono già, installato nei 48 mesi di gestione.</p>
   <svg class="scena" viewBox="0 0 600 440" aria-hidden="true">
