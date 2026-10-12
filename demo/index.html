@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>Demo</title>
+<style>
+  :root {
+    --bg: #0d0d0d; --panel: #1a1a1a; --text: #ffffff; --muted: #bdbdbd;
+    --red: #c40000; --green: #007a33; --yellow: #ffd600;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    min-height: 100vh; padding: 16px;
+    display: flex; gap: 28px; align-items: center; justify-content: center;
+  }
+
+  /* ---------- Telefono (Livello 1: app) ---------- */
+  .phone {
+    position: relative; flex: none;
+    height: min(860px, calc(100vh - 32px)); aspect-ratio: 9 / 19;
+    border: 12px solid #2b2b2b; border-radius: 46px; background: #000;
+    overflow: hidden; box-shadow: 0 0 0 2px #444;
+  }
+  .phone.flash { animation: flash .45s steps(1) infinite; }
+  @keyframes flash {
+    0%  { box-shadow: 0 0 0 2px #444, 0 0 46px 18px #ffffff; }
+    50% { box-shadow: 0 0 0 2px #444, 0 0 46px 18px var(--yellow); }
+  }
+  .screen {
+    position: absolute; inset: 0; container-type: inline-size;
+    display: flex; flex-direction: column; gap: 12px;
+    padding: 18px 18px 16px; font-size: 26px; transition: background .2s;
+  }
+  .screen.rosso { background: var(--red); }
+  .screen.verde { background: var(--green); }
+  .screen.centro .big { margin-top: auto; }
+  .bar { display: flex; justify-content: space-between; font-size: 24px; font-weight: 800; }
+  .bar .nome { color: var(--yellow); }
+  .screen.rosso .bar .nome, .screen.verde .bar .nome { color: #fff; }
+  .cam { position: relative; flex: 1 1 auto; min-height: 0; border: 3px solid #fff; border-radius: 18px; overflow: hidden; }
+  .cam svg { width: 100%; height: 100%; display: block; }
+  .camlabel {
+    position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+    background: rgba(0,0,0,.78); padding: 4px 14px; border-radius: 12px;
+    font-size: 28px; font-weight: 900; white-space: nowrap;
+  }
+  .big { font-size: 44px; font-weight: 900; line-height: 1.1; text-align: center; overflow-wrap: anywhere; }
+  .big.enorme { font-size: 60px; font-size: min(76px, 17cqw); }
+  .sub { font-size: 28px; font-weight: 700; text-align: center; line-height: 1.3; }
+  .sub:empty { display: none; }
+  .sub b { color: var(--yellow); }
+  .screen.rosso .sub b { color: #fff; text-decoration: underline; }
+  .btn-main {
+    flex: 1 1 auto; min-height: 180px; border: none; border-radius: 28px;
+    background: var(--yellow); color: #000; font: inherit; font-size: 46px; font-weight: 900;
+    cursor: pointer; box-shadow: 0 8px 0 #b39500;
+  }
+  .btn-main:active { transform: translateY(4px); box-shadow: 0 4px 0 #b39500; }
+  .progress { height: 34px; border: 3px solid #fff; border-radius: 17px; overflow: hidden; }
+  .progress div { height: 100%; width: 0; background: #fff; }
+  .sms { background: #fff; color: #000; border-radius: 20px; padding: 14px 16px; font-size: 26px; font-weight: 700; }
+  .sms .sms-h { font-size: 24px; font-weight: 600; color: #333; margin-bottom: 6px; }
+  .counter {
+    margin-top: auto; text-align: center; font-size: 24px; font-weight: 700;
+    border-top: 2px solid rgba(255,255,255,.4); padding-top: 10px;
+  }
+  .counter b { font-size: 30px; }
+  .counter.pop b { animation: pop .8s ease-out; display: inline-block; }
+  @keyframes pop { 0% { transform: scale(2.2); color: var(--yellow); } 100% { transform: scale(1); } }
+
+  /* ---------- Strada (Livello 2: hardware, simulato) ---------- */
+  .strada { flex: 1 1 560px; max-width: 800px; display: flex; flex-direction: column; gap: 10px; }
+  .strada h2 { margin: 0; font-size: 26px; }
+  .strada .nota { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.35; }
+  .strada svg { width: 100%; max-height: 50vh; display: block; border-radius: 14px; background: #222; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .card { background: var(--panel); border: 2px solid #333; border-radius: 12px; padding: 8px 12px; }
+  .card.wide { grid-column: 1 / -1; }
+  .card.on { border-color: var(--yellow); }
+  .card h3 { margin: 0 0 4px; font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .card .v { font-size: 19px; font-weight: 800; line-height: 1.3; }
+  .v .rosso { color: #ff6b6b; } .v .verde { color: #69f0ae; } .v .giallo { color: var(--yellow); }
+  .blink { animation: blink .5s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: .12; } }
+  .onda { animation: onda 1.2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes onda { 0% { opacity: .9; transform: scale(.4); } 100% { opacity: 0; transform: scale(1.6); } }
+
+  /* ---------- Regia (per chi presenta) ---------- */
+  .regia {
+    position: fixed; right: 8px; bottom: 8px; display: flex; gap: 6px; align-items: center;
+    opacity: .35; font-size: 13px; color: var(--muted); transition: opacity .2s;
+  }
+  .regia:hover { opacity: 1; }
+  .regia button { font: inherit; background: #222; color: #fff; border: 1px solid #555; border-radius: 6px; padding: 4px 8px; cursor: pointer; }
+
+  @media (max-width: 820px) {
+    body { flex-direction: column; padding: 0; gap: 16px; }
+    .phone { width: 100%; height: 100svh; min-height: 620px; aspect-ratio: auto; border: none; border-radius: 0; }
+    .phone.flash { animation: flashInset .45s steps(1) infinite; }
+    @keyframes flashInset { 0% { box-shadow: inset 0 0 0 10px #fff; } 50% { box-shadow: inset 0 0 0 10px var(--yellow); } }
+    .strada { flex: none; width: 100%; padding: 0 16px 64px; }
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Livello 1: l'app sul telefono -->
+<div class="phone" id="phone">
+  <div class="screen" id="screen">
+    <div class="bar"><span class="nome" data-nome></span><span id="ora"></span></div>
+    <div class="cam" id="cam" hidden>
+      <svg viewBox="0 0 360 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="360" height="300" fill="#2c3e50"/>
+        <rect x="140" y="105" width="80" height="85" fill="#a1887f"/>
+        <rect x="160" y="125" width="14" height="20" fill="#4e342e"/><rect x="186" y="125" width="14" height="20" fill="#4e342e"/>
+        <polygon points="0,0 140,105 140,190 0,300" fill="#8d6e63"/>
+        <polygon points="360,0 220,105 220,190 360,300" fill="#795548"/>
+        <polygon points="25,55 75,93 75,150 25,135" fill="#3e2723"/>
+        <polygon points="95,108 125,130 125,165 95,160" fill="#3e2723"/>
+        <polygon points="335,55 285,93 285,150 335,135" fill="#3e2723"/>
+        <polygon points="265,108 235,130 235,165 265,160" fill="#3e2723"/>
+        <polygon points="0,300 140,190 220,190 360,300" fill="#5a5a5a"/>
+        <g id="camCar" visibility="hidden">
+          <rect x="-50" y="-36" width="100" height="56" rx="12" fill="#e53935"/>
+          <rect x="-38" y="-30" width="76" height="22" rx="5" fill="#b3e5fc"/>
+          <circle cx="-34" cy="6" r="7" fill="#fff59d"/><circle cx="34" cy="6" r="7" fill="#fff59d"/>
+          <rect x="-46" y="20" width="16" height="12" rx="3" fill="#111"/><rect x="30" y="20" width="16" height="12" rx="3" fill="#111"/>
+        </g>
+        <g id="camBox" visibility="hidden">
+          <rect id="camBoxRect" fill="none" stroke="#ffd600" stroke-width="4"/>
+          <rect id="camBoxTag" fill="#ffd600"/>
+          <text id="camBoxTxt" fill="#000" font-size="18" font-weight="900" font-family="Arial, sans-serif">AUTO</text>
+        </g>
+      </svg>
+      <div class="camlabel" id="camlabel"></div>
+    </div>
+    <div class="big" id="big"></div>
+    <div class="sub" id="sub"></div>
+    <div class="progress" id="progress" hidden><div id="progressFill"></div></div>
+    <div class="sms" id="sms" hidden>
+      <div class="sms-h">SMS a <span id="smsA"></span> · <span id="smsOra"></span></div>
+      <div>Mamma è arrivata viva dall'altra parte ✓</div>
+    </div>
+    <button class="btn-main" id="btnStart" hidden aria-label="Attraverso">ATTRAVERSO</button>
+    <div class="counter" id="counter">Quasi-incidenti evitati: <b id="cntQuasi">0</b></div>
+  </div>
+</div>
+
+<!-- Livello 2: la strada (hardware simulato) -->
+<section class="strada">
+  <h2>Lato strada</h2>
+  <p class="nota">A sinistra l'app <b data-nome></b> (Livello 1, attiva a T+90' in tutti i vicoli).
+    Qui il Livello 2: hardware montato su strisce e semafori che esistono già, installato nei 48 mesi di gestione.</p>
+  <svg viewBox="0 0 600 440" aria-hidden="true">
+    <defs><clipPath id="scena"><rect width="600" height="440"/></clipPath></defs>
+    <g clip-path="url(#scena)">
+    <rect x="0" y="0" width="600" height="100" fill="#5d4037"/>
+    <g id="finestre"></g>
+    <text x="300" y="18" fill="#d7ccc8" font-size="14" text-anchor="middle" font-family="Arial, sans-serif">Centro storico di Gattapelata · vicolo con strisce esistenti</text>
+    <rect x="0" y="100" width="600" height="20" fill="#9e9e9e"/>
+    <rect x="0" y="120" width="600" height="200" fill="#3a3a3a"/>
+    <rect x="0" y="320" width="600" height="20" fill="#9e9e9e"/>
+    <rect x="0" y="340" width="600" height="100" fill="#6d4c41"/>
+    <g fill="#eeeeee">
+      <rect x="262" y="128" width="76" height="20"/><rect x="262" y="160" width="76" height="20"/>
+      <rect x="262" y="192" width="76" height="20"/><rect x="262" y="224" width="76" height="20"/>
+      <rect x="262" y="256" width="76" height="20"/><rect x="262" y="288" width="76" height="20"/>
+    </g>
+    <!-- semaforo pedonale -->
+    <rect x="212" y="58" width="28" height="48" rx="5" fill="#111" stroke="#777" stroke-width="2"/>
+    <circle id="sLuce" cx="226" cy="82" r="10" fill="#ff1744"/>
+    <!-- lampeggianti LED -->
+    <circle id="alone1" cx="352" cy="110" r="22" fill="rgba(255,214,0,.4)" visibility="hidden" class="blink"/>
+    <circle id="led1" cx="352" cy="110" r="9" fill="#555" stroke="#000" stroke-width="2"/>
+    <circle id="alone2" cx="248" cy="330" r="22" fill="rgba(255,214,0,.4)" visibility="hidden" class="blink"/>
+    <circle id="led2" cx="248" cy="330" r="9" fill="#555" stroke="#000" stroke-width="2"/>
+    <!-- sensore radar -->
+    <rect x="374" y="104" width="12" height="12" rx="2" fill="#90caf9"/>
+    <g id="radar" visibility="hidden" fill="none" stroke="#90caf9" stroke-width="3">
+      <circle class="onda" cx="380" cy="110" r="24"/>
+    </g>
+    <!-- auto -->
+    <g id="sCar" style="transform: translateX(-150px)">
+      <rect x="0" y="250" width="110" height="46" rx="10" fill="#e53935"/>
+      <rect x="72" y="256" width="20" height="34" rx="4" fill="#b3e5fc"/>
+      <circle cx="108" cy="258" r="4" fill="#fff59d"/><circle cx="108" cy="288" r="4" fill="#fff59d"/>
+    </g>
+    <!-- anziana -->
+    <g id="sPed">
+      <circle cx="300" cy="330" r="12" fill="#ffd600" stroke="#000" stroke-width="3"/>
+      <text id="sPedNome" x="318" y="336" fill="#fff" font-size="16" font-weight="700" font-family="Arial, sans-serif"></text>
+    </g>
+    </g>
+  </svg>
+  <div class="cards">
+    <div class="card" id="cLed"><h3>Lampeggiante LED</h3><div class="v" id="vLed"></div></div>
+    <div class="card" id="cRadar"><h3>Sensore radar (niente immagini)</h3><div class="v" id="vRadar"></div></div>
+    <div class="card" id="cSem"><h3>Semaforo pedonale (dove c'è)</h3><div class="v" id="vSem"></div></div>
+    <div class="card wide" id="cDec"><h3>Come decide l'app</h3><div class="v" id="vDec"></div></div>
+    <div class="card wide"><h3>Dati anonimi al Comune (metodo di misura)</h3><div class="v" id="vDati"></div></div>
+  </div>
+</section>
+
+<div class="regia">
+  <button id="bAvanti" type="button">⏭ Avanti</button>
+  <button id="bRiavvia" type="button">↺ Riavvia</button>
+  <button id="bVoce" type="button"></button>
+  <span>Spazio = avanti · R = riavvia · M = voce</span>
+</div>
+
+<script>
+// ---------- Configurazione (il nome si cambia qui) ----------
+const NOME_APP = "SetteVite";
+const UTENTE = "Maria";
+const FAMILIARE = "Luca (figlio)";
+const LARGHEZZA_M = 5;      // larghezza del vicolo
+const VELOCITA_MS = 0.8;    // velocità di camminata di Maria
+const MARGINE_S = 1;        // margine di sicurezza
+const SERVONO_S = Math.round(LARGHEZZA_M / VELOCITA_MS + MARGINE_S); // 7 s
+const ARRIVO_AUTO_S = 3;    // tempo all'arrivo stimato dalla crescita del riquadro
+const VERDE_BASE_S = 7, VERDE_EXTRA_S = 8;
+const DURATA_ATTRAVERSAMENTO_MS = 8500;
+
+const $ = (id) => document.getElementById(id);
+const screen = $("screen");
+let nQuasi = 0, nAttraversamenti = 0;
+
+document.title = NOME_APP + " – demo";
+document.querySelectorAll("[data-nome]").forEach((el) => { el.textContent = NOME_APP; });
+$("sPedNome").textContent = UTENTE;
+$("smsA").textContent = FAMILIARE;
+
+// finestre degli edifici nella vista strada
+(function () {
+  const g = $("finestre"); let html = "";
+  for (let x = 24; x < 600; x += 64) {
+    html += `<rect x="${x}" y="34" width="26" height="40" fill="#3e2723" stroke="#a1887f" stroke-width="2"/>`;
+    html += `<rect x="${x}" y="370" width="26" height="40" fill="#3e2723" stroke="#a1887f" stroke-width="2"/>`;
+  }
+  g.innerHTML = html;
+})();
+
+function oraAdesso() {
+  const d = new Date();
+  return String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+}
+function aggiornaOra() { $("ora").textContent = oraAdesso(); }
+aggiornaOra(); setInterval(aggiornaOra, 10000);
+
+// ---------- Sintesi vocale ----------
+const haVoce = "speechSynthesis" in window;
+let voceOn = true, voceIt = null;
+function caricaVoci() {
+  const v = speechSynthesis.getVoices();
+  voceIt = v.find((x) => x.lang === "it-IT" && /Google|Elsa|Isabella|Alice|Federica|Luca/i.test(x.name))
+        || v.find((x) => (x.lang || "").toLowerCase().startsWith("it")) || null;
+}
+if (haVoce) { caricaVoci(); speechSynthesis.onvoiceschanged = caricaVoci; }
+function parla(testo) {
+  if (!voceOn || !haVoce) return;
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(testo);
+    u.lang = "it-IT"; u.rate = 0.95;
+    if (voceIt) u.voice = voceIt;
+    speechSynthesis.speak(u);
+  } catch (e) { /* la demo prosegue anche senza voce */ }
+}
+function aggiornaBottoneVoce() { $("bVoce").textContent = voceOn ? "🔊 Voce sì" : "🔇 Voce no"; }
+aggiornaBottoneVoce();
+
+// ---------- Timer legati al passo corrente ----------
+let gen = 0, timers = [], passo = 0;
+function dopo(fn, ms) {
+  const g = gen;
+  timers.push(setTimeout(() => { if (g === gen) fn(); }, ms));
+}
+function fermaTimer() { timers.forEach(clearTimeout); timers = []; }
+
+// ---------- Schermo del telefono ----------
+function ui({ bg = "", cam = null, big = "", enorme = false, sub = "", start = false, sms = false, progress = false } = {}) {
+  screen.className = "screen" + (bg ? " " + bg : "") + (cam ? "" : " centro");
+  $("cam").hidden = !cam;
+  if (cam) $("camlabel").textContent = cam;
+  $("big").innerHTML = big;
+  $("big").classList.toggle("enorme", enorme);
+  $("sub").innerHTML = sub;
+  $("btnStart").hidden = !start;
+  $("sms").hidden = !sms;
+  $("progress").hidden = !progress;
+  $("phone").classList.remove("flash");
+  const f = $("progressFill"); f.style.transition = "none"; f.style.width = "0";
+}
+
+function attr(el, o) { for (const k in o) el.setAttribute(k, o[k]); }
+function autoInCamera(p, riquadro) {
+  const car = $("camCar"), box = $("camBox");
+  if (p < 0) { car.setAttribute("visibility", "hidden"); box.setAttribute("visibility", "hidden"); return; }
+  const s = 0.15 + p * 1.6, cx = 180, cy = 195 + p * 70;
+  attr(car, { transform: `translate(${cx} ${cy}) scale(${s})`, visibility: "visible" });
+  if (!riquadro) { box.setAttribute("visibility", "hidden"); return; }
+  const x = cx - 50 * s - 6, y = cy - 36 * s - 6, w = 100 * s + 12, h = 68 * s + 12;
+  attr($("camBoxRect"), { x, y, width: w, height: h });
+  attr($("camBoxTag"), { x, y: y - 26, width: 64, height: 24 });
+  attr($("camBoxTxt"), { x: x + 7, y: y - 8 });
+  box.setAttribute("visibility", "visible");
+}
+function animaAuto(p0, p1, ms, riquadroDa) {
+  const g = gen, t0 = performance.now();
+  function frame(now) {
+    if (g !== gen) return;
+    const k = Math.min(1, (now - t0) / ms), p = p0 + (p1 - p0) * k;
+    autoInCamera(p, p >= riquadroDa);
+    if (k < 1) requestAnimationFrame(frame);
+  }
+  frame(t0);
+}
+
+// ---------- Strada ----------
+function muovi(el, verso, ms, da) {
+  if (da !== undefined) { el.style.transition = "none"; el.style.transform = da; el.getBoundingClientRect(); }
+  el.style.transition = ms ? `transform ${ms}ms linear` : "none";
+  el.style.transform = verso;
+}
+function strada({ auto = "ferma", persona = "inizio", led = false, verde = false, radar = false } = {}) {
+  const car = $("sCar"), ped = $("sPed");
+  if (auto === "passa") muovi(car, "translateX(750px)", 3000, "translateX(-150px)");
+  else muovi(car, auto === "passata" ? "translateX(750px)" : "translateX(-150px)", 0);
+  if (persona === "attraversa") muovi(ped, "translateY(-220px)", DURATA_ATTRAVERSAMENTO_MS, "translateY(0px)");
+  else muovi(ped, persona === "arrivata" ? "translateY(-220px)" : "translateY(0px)", 0);
+
+  ["1", "2"].forEach((n) => {
+    $("led" + n).setAttribute("fill", led ? "#ffd600" : "#555");
+    $("alone" + n).setAttribute("visibility", led ? "visible" : "hidden");
+  });
+  $("led1").classList.toggle("blink", led); $("led2").classList.toggle("blink", led);
+  $("cLed").classList.toggle("on", led);
+  $("vLed").innerHTML = led ? '<span class="giallo">ACCESO</span> – qualcuno sulle strisce' : "Spento";
+
+  $("radar").setAttribute("visibility", radar ? "visible" : "hidden");
+  $("cRadar").classList.toggle("on", radar);
+  $("vRadar").textContent = radar ? "Persona sulle strisce" : "Strisce libere";
+
+  $("sLuce").setAttribute("fill", verde ? "#00e676" : "#ff1744");
+  $("cSem").classList.toggle("on", verde);
+  if (!verde) $("vSem").innerHTML = '<span class="rosso">ROSSO</span> pedoni';
+}
+function semaforoVerde() {
+  let rimasti = VERDE_BASE_S + VERDE_EXTRA_S;
+  function tick() {
+    $("vSem").innerHTML = `<span class="verde">VERDE ${rimasti} s</span><br>+${VERDE_EXTRA_S} s attraversamento lento (chiesto dall'app)`;
+    if (rimasti > 1) { rimasti--; dopo(tick, 1000); }
+  }
+  tick();
+}
+function decisione(html) { $("vDec").innerHTML = html; }
+function aggiornaDati(pop) {
+  $("cntQuasi").textContent = nQuasi;
+  $("vDati").innerHTML = `Attraversamenti assistiti: <span class="giallo">${nAttraversamenti}</span> · ` +
+    `Quasi-incidenti evitati: <span class="giallo">${nQuasi}</span> · nessuna immagine, nessun nome`;
+  if (pop) {
+    const c = $("counter"); c.classList.remove("pop"); void c.offsetWidth; c.classList.add("pop");
+  }
+}
+
+// ---------- Il flusso della demo ----------
+const PASSI = [
+  { // 0. attesa
+    entra() {
+      ui({ big: `Ciao ${UTENTE}`, sub: "Quando vuoi attraversare,<br>premi il pulsante.", start: true });
+      autoInCamera(-1); strada();
+      decisione("In attesa che Maria prema ATTRAVERSO.");
+    },
+  },
+  { // 1. guarda a sinistra: arriva un'auto
+    dura: 4200,
+    entra() {
+      ui({ cam: "← SINISTRA", big: "Guarda a sinistra" });
+      parla(`Ciao ${UTENTE}. Guarda a sinistra.`);
+      strada();
+      animaAuto(0, 0.5, 3800, 0.08);
+      decisione("Fotocamera: cerco veicoli a sinistra…");
+      dopo(() => {
+        $("sub").innerHTML = `Auto tra <b>${ARRIVO_AUTO_S} s</b><br>A te servono <b>${SERVONO_S} s</b>`;
+        decisione(`Auto in arrivo tra <span class="giallo">${ARRIVO_AUTO_S} s</span> (da quanto cresce nell'inquadratura) · ` +
+          `a Maria servono ${LARGHEZZA_M} m ÷ ${String(VELOCITA_MS).replace(".", ",")} m/s + ${MARGINE_S} s = ` +
+          `<span class="giallo">${SERVONO_S} s</span> → ${ARRIVO_AUTO_S} &lt; ${SERVONO_S}: <span class="rosso">ASPETTA</span>`);
+      }, 1500);
+    },
+  },
+  { // 2. aspetta: l'auto passa, quasi-incidente evitato
+    dura: 5200,
+    entra() {
+      ui({ bg: "rosso", big: "✋<br>ASPETTA", enorme: true, sub: "Arriva un'auto.<br>Non fai in tempo." });
+      parla("Aspetta. Arriva una macchina.");
+      autoInCamera(-1);
+      strada({ auto: "passa" });
+      dopo(() => {
+        nQuasi++; aggiornaDati(true);
+        $("sub").innerHTML = "L'auto è passata.";
+      }, 3200);
+    },
+  },
+  { // 3. sinistra di nuovo: libero
+    dura: 3200,
+    entra() {
+      ui({ cam: "← SINISTRA", big: "Libero ✓", sub: "L'auto è passata." });
+      parla("L'auto è passata. A sinistra è libero.");
+      autoInCamera(-1); strada({ auto: "passata" });
+      decisione("Sinistra: nessun veicolo in arrivo.");
+    },
+  },
+  { // 4. destra: libero
+    dura: 3000,
+    entra() {
+      ui({ cam: "DESTRA →", big: "Guarda a destra" });
+      parla("Guarda a destra.");
+      autoInCamera(-1); strada({ auto: "passata" });
+      decisione("Fotocamera: cerco veicoli a destra…");
+      dopo(() => { $("big").textContent = "Libero ✓"; decisione("Destra: nessun veicolo in arrivo."); }, 1400);
+    },
+  },
+  { // 5. avanti: libero
+    dura: 3000,
+    entra() {
+      ui({ cam: "↑ AVANTI", big: "Guarda avanti" });
+      parla("Guarda avanti.");
+      autoInCamera(-1); strada({ auto: "passata" });
+      dopo(() => { $("big").textContent = "Libero ✓"; decisione("Avanti: strada libera. Chiedo il verde al semaforo."); }, 1400);
+    },
+  },
+  { // 6. vai: telefono lampeggia, lampeggiante e verde allungato
+    dura: DURATA_ATTRAVERSAMENTO_MS + 300,
+    entra() {
+      ui({ bg: "verde", big: "VAI ADESSO", enorme: true, sub: "Hai tutto il tempo.<br>💡 Ti vedono arrivare.", progress: true });
+      parla("Vai adesso. Hai tutto il tempo.");
+      $("phone").classList.add("flash");
+      const f = $("progressFill"); f.getBoundingClientRect();
+      f.style.transition = `width ${DURATA_ATTRAVERSAMENTO_MS}ms linear`; f.style.width = "100%";
+      strada({ auto: "passata", persona: "attraversa", led: true, verde: true, radar: true });
+      semaforoVerde();
+      decisione(`Nessun veicolo in arrivo → <span class="verde">VAI</span>. Il telefono lampeggia, il lampeggiante si accende, il verde dura ${VERDE_EXTRA_S} s in più.`);
+    },
+  },
+  { // 7. arrivata
+    entra() {
+      ui({ big: "Sei arrivata dall'altra parte ✓", sms: true });
+      $("smsOra").textContent = oraAdesso();
+      parla(`Brava ${UTENTE}. Sei arrivata dall'altra parte.`);
+      nAttraversamenti++; aggiornaDati();
+      strada({ auto: "passata", persona: "arrivata" });
+      decisione("Attraversamento completato. Al Comune arrivano solo due contatori anonimi.");
+    },
+  },
+];
+
+function vaiA(i) {
+  gen++; fermaTimer();
+  passo = i;
+  const p = PASSI[i];
+  p.entra();
+  if (p.dura) dopo(() => quandoTace(() => vaiA(i + 1)), p.dura);
+}
+// se la voce sta ancora parlando, aspetta che finisca (al massimo 4 s)
+function quandoTace(fn, atteso = 0) {
+  if (voceOn && haVoce && speechSynthesis.speaking && atteso < 4000) dopo(() => quandoTace(fn, atteso + 200), 200);
+  else fn();
+}
+function avanti() {
+  if (passo >= PASSI.length - 1) vaiA(0);
+  else vaiA(passo + 1);
+}
+function riavvia() {
+  if (haVoce) speechSynthesis.cancel();
+  nQuasi = 0; nAttraversamenti = 0; aggiornaDati();
+  vaiA(0);
+}
+function cambiaVoce() {
+  voceOn = !voceOn;
+  if (!voceOn && haVoce) speechSynthesis.cancel();
+  aggiornaBottoneVoce();
+}
+
+$("btnStart").addEventListener("click", (e) => { e.currentTarget.blur(); vaiA(1); });
+$("bAvanti").addEventListener("click", (e) => { e.currentTarget.blur(); avanti(); });
+$("bRiavvia").addEventListener("click", (e) => { e.currentTarget.blur(); riavvia(); });
+$("bVoce").addEventListener("click", (e) => { e.currentTarget.blur(); cambiaVoce(); });
+document.addEventListener("keydown", (e) => {
+  if (e.repeat) return;
+  if (e.code === "Space") { e.preventDefault(); avanti(); }
+  else if (e.key === "r" || e.key === "R") riavvia();
+  else if (e.key === "m" || e.key === "M") cambiaVoce();
+});
+
+aggiornaDati();
+vaiA(0);
+</script>
+</body>
+</html>
