@@ -117,3 +117,5 @@ Importi da docs/offerta-economica.md: € 350/unità (fascia stimata € 250–4
 Nome Team Passo Sicuro provvisorio. Dichiarazioni Art. 4 da documentare; nessun dato storico inventato. Relazione tecnica ancora da allineare dal ruolo commerciale. I sorgenti artifact del collega non sono nel repository: è aggiornata la copia HTML pubblicata, con istruzione di portare i numeri nei sorgenti prima di rigenerare, altrimenti si perdono. Non modificata la demo principale.
 
 Verifiche in questo task: aritmetica, numero slide, assenza di segnaposto numerici e sintassi dello script. NON VERIFICATO: resa visiva delle slide aggiornate, proiettore, telefono reale, audio; Chrome non controllabile per permessi del computer mancanti. Deploy da verificare dopo il push.
+
+Sincronizzazione: integrato af5ff2c del collega prima del push; revisione delle slide ripetuta sul checkout aggiornato. Nessun conflitto.

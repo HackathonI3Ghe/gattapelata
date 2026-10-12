@@ -31,4 +31,4 @@ Checkpoint parziale: numeri e alternativa indossabile in fase 2, senza pagina an
 
 Esito: ACCETTATO
 
-Solo checkpoint delle slide: non una certificazione di affidabilità stradale o conformità privacy. Numeri sono stime e ipotesi dichiarate; relazioni, requisiti e prove manuali restano pendenti.
+Revisione ripetuta dopo integrazione del commit af5ff2c del collega (barre di confronto nella demo principale). Le modifiche alle slide e i numeri restano coerenti con il pitch e l’offerta; nessun conflitto. Non ripetute le prove funzionali della demo del collega. Solo checkpoint delle slide: non una certificazione di affidabilità stradale o conformità privacy. Numeri sono stime e ipotesi dichiarate; relazioni, requisiti e prove manuali restano pendenti.
