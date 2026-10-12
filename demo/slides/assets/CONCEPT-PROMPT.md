@@ -1,0 +1,7 @@
+# Concept fotografico del dispositivo Passo Sicuro
+
+Immagine generata con il tool integrato imagegen il 12 ottobre 2026. Visualizzazione di un prodotto proposto per la fase 2, non fotografia di hardware esistente. La geometria illustrata non è un progetto esecutivo. File: `passo-sicuro-indossabile-concept.png`.
+
+## Prompt finale
+
+Use case: product-mockup. Asset type: a photorealistic concept product photograph for an Italian hackathon presentation, not a photograph of an existing real product. Subject: an attractive autonomous wearable street-awareness aid for elderly people, a compact palm-sized chest clip approximately 9 cm tall and 6 cm wide, with one camera lens, one large tactile mustard-yellow button, a discreet speaker grille and a small status light; no screen. Design: matte warm ivory housing, charcoal camera glass, refined rounded corners, a robust visible clothing clip, mustard accent, friendly accessible premium industrial design. Composition: horizontal 4:3 hero product shot, single device centered at a three-quarter angle, close enough to see button and lens, fully within frame, generous breathing room. Scene: dark navy studio background matching #16243A, subtle warm rim light and grounded soft shadow. Materials: realistic matte molded polymer, detailed lens glass, tactile button. Polished, desirable, practical, not futuristic science fiction. No text, no logos, no watermarks, no certifications, no feature labels, no phone, no display, no extra cameras. This image visualizes an unbuilt phase-2 concept; do not imply medical approval.

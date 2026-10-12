@@ -112,7 +112,7 @@ Distribuzione dei porta-telefono al collo: in parallelo, non blocca l'avvio.
 
 Su richiesta del team sono aggiornate le 16 slide HTML, mantenendo il design esistente. Nuova slide 10: alternativa autonoma al telefono sul petto con una camera, computer, batteria, voce e vibrazione. Solo fase 2 dopo T+90', pilota controllato su 100 persone prima di estendere fino a 1.000 utenti. Il dispositivo non esiste ancora; non viene dichiarata visione a 360°. La pagina animata è stata esclusa dalla consegna per l'ultima indicazione dell'utente.
 
-Importi da docs/offerta-economica.md: € 350/unità (fascia stimata € 250–400), pilota € 250.000 già incluso, totale € 10 milioni, infrastruttura € 1,24 milioni incluse riserve, 12,4%. Scenario di circa 17 vite/anno condizionato a −5% della baseline; non previsione validata. Obiettivo pilota −15% conflitti per 1.000 attraversamenti. Avvisi descritti come indicatori candidati di rischio, non incidenti certamente evitati. Durata conservazione proposta: 30 giorni eventi e 48 mesi aggregati, da motivare nella progettazione privacy.
+Importi da docs/offerta-economica.md: € 350/unità (fascia stimata € 250–400), pilota € 250.000 già incluso, totale € 10 milioni, infrastruttura € 1,24 milioni incluse riserve, 12,4%. Traguardo successivamente aggiornato su richiesta a 330 vite/anno su 342 (96,5%), solo obiettivo aspirazionale non validato. Obiettivo pilota −15% conflitti per 1.000 attraversamenti. Avvisi descritti come indicatori candidati di rischio, non incidenti certamente evitati. Durata conservazione proposta: 30 giorni eventi e 48 mesi aggregati, da motivare nella progettazione privacy.
 
 Nome Team Passo Sicuro provvisorio. Dichiarazioni Art. 4 da documentare; nessun dato storico inventato. Relazione tecnica ancora da allineare dal ruolo commerciale. I sorgenti artifact del collega non sono nel repository: è aggiornata la copia HTML pubblicata, con istruzione di portare i numeri nei sorgenti prima di rigenerare, altrimenti si perdono. Non modificata la demo principale.
 
@@ -133,3 +133,11 @@ Sincronizzazione: integrato af5ff2c del collega prima del push; revisione delle 
   - flusso completo sul sito pubblicato: 27,5 s;
   - due revisioni indipendenti (subagenti), proposte applicate.
 - **NON VERIFICATO:** telefono reale, Safari iOS, voce con audio, fotocamera vera.
+
+## Concept fotografico e nuovo traguardo
+
+Aggiornata la slide 10 con immagine generata da imagegen, copiata in demo/slides/assets/passo-sicuro-indossabile-concept.png. Etichetta visibile: Concept generato con IA, hardware non ancora realizzato. Una lente, un pulsante giallo, altoparlante, clip e nessuno schermo; fase 2 esplicita. Prompt e provenienza in demo/slides/assets/CONCEPT-PROMPT.md.
+
+Slide 11: 330 vite/anno su baseline 342 = 96,5%, obiettivo aspirazionale a regime da validare, non previsione o risultato misurato. Nessuna evidenza disponibile giustifica una promessa di tale riduzione. Il pilota mantiene l'obiettivo di misura distinto.
+
+Verifiche: immagine ispezionata nell'output imagegen, file e riferimento relativo presenti, 16 slide, sintassi script e aritmetica controllate. Resa delle slide in Chrome e proiettore NON VERIFICATA: permessi del computer mancanti. Demo principale invariata.
