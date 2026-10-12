@@ -63,15 +63,26 @@ Opzionale e con consenso: SMS al familiare *"Arrivata viva dall'altra parte"*.
 
 Regola d'oro: **ognuno modifica solo i file del proprio ruolo.** Le informazioni passano tramite i file `NOTE-*.md`.
 
-### Persona A – Tecnica → possiede `demo/`
+### Persona A – Tecnica → possiede `demo/` e `.github/workflows/`
 
-- `demo/index.html`: **un solo file**, niente build, niente backend, dati finti. Si apre con doppio click o da telefono.
+- **Web app React + Vite in `demo/`, deployabile su GitHub Pages.** Sorgenti separati e build statica, senza backend per la demo. Questa scelta sostituisce il precedente requisito del singolo file HTML apribile con doppio click.
 - Mobile-first, testo ≥ 24px, pulsanti enormi, alto contrasto, sintesi vocale in italiano (`speechSynthesis`, `lang="it-IT"`).
 - Un'azione principale. Il flusso della demo deve durare meno di 60 secondi.
 - Layout: a sinistra il **telefono** (app), a destra la **strada**, simulata. Quando l'app dice "Vai", nella strada si accende il lampeggiante e il semaforo allunga il verde. Non serve altro scope.
 - **Modalità simulata obbligatoria** (pulsante di riserva): in sala non c'è una strada, e la fotocamera o il modello possono bloccarsi.
-- Fotocamera vera (facoltativa, solo se avanza tempo): TensorFlow.js + COCO-SSD da CDN. Sul telefono la fotocamera funziona solo con HTTPS: usare GitHub Pages oppure `localhost`, perché aprire il file con doppio click non basta.
+- Fotocamera del telefono: aprirla dopo il tap con `getUserMedia`, preferendo quella posteriore; mostrare la ripresa in un elemento video con `muted` e `playsInline`. La prova prevede di inquadrare un video della strada riprodotto su uno schermo esterno. Gestire permesso negato ed errori, e fermare le tracce alla chiusura. Il riconoscimento reale (es. TensorFlow.js + COCO-SSD) è una componente distinta, facoltativa se il tempo lo permette; indicare chiaramente quando i risultati sono simulati.
+- Sul cellulare provare la fotocamera dal sito HTTPS pubblicato. `localhost` vale sul dispositivo che esegue il server; l'indirizzo HTTP del computer nella rete locale non è un'alternativa equivalente per la fotocamera del telefono.
 - `demo/NOTE-TECNICHE.md`: stack, architettura, flusso dati, come si va in produzione in 90', quali dati personali tratta. Serve alla Persona B per la relazione.
+
+### Requisiti di build e deploy per gli agenti tecnici
+
+- Leggere [demo/NOTE-DEPLOY.md](demo/NOTE-DEPLOY.md) prima di creare o modificare lo stack e il deploy. Conservare i file `NOTE-*.md` durante lo scaffolding.
+- Tenere `package.json`, `package-lock.json`, configurazione Vite e sorgenti applicativi in `demo/`; escludere `node_modules/` e `dist/` da Git. Prevedere gli script `dev`, `build` e `preview`.
+- Impostare `base: '/gattapelata/'` in Vite. Asset e collegamenti devono funzionare sotto questo percorso; evitare percorsi assoluti alla radice del dominio. Per il flusso demo preferire lo stato React nella stessa pagina.
+- Creare `.github/workflows/deploy-pages.yml`: al push su `main` che modifica l'app o il workflow, eseguire `npm ci` e `npm run build` in `demo/`, quindi pubblicare **solo `demo/dist`** con le Actions ufficiali di GitHub Pages. Prevedere anche `workflow_dispatch`. Usare il token automatico GitHub con i permessi necessari, senza token personali nel repository.
+- Destinazione: **https://hackathoni3ghe.github.io/gattapelata/**. L'amministratore abilita Pages con Source `GitHub Actions`; con GitHub Free il repository deve essere pubblico. Gli agenti non cambiano visibilità o impostazioni dell'organizzazione senza richiesta esplicita.
+- Prima di consegnare modifiche applicative, verificare installazione riproducibile con `npm ci`, build con `npm run build` e anteprima con `npm run preview`. Dopo il deploy verificare apertura e asset sul sito pubblicato, quindi pulsante principale, voce, simulazione e fotocamera sui telefoni disponibili. Riportare esplicitamente eventuali verifiche non eseguite.
+- La consegna tecnica richiede una build pubblicabile e una demo utilizzabile da browser mobile. Non dichiarare il sito operativo solo perché Pages è abilitato: serve un deploy riuscito. PWA installabile e offline sono funzionalità ulteriori, da dichiarare solo se implementate e provate.
 
 ### Persona B – Commerciale → possiede `docs/`
 
