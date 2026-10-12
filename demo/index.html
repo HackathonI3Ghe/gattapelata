@@ -111,7 +111,7 @@
     max-width: calc(100% - 24px); overflow: hidden; text-overflow: ellipsis;
   }
   .simtag {
-    position: absolute; z-index: 3; left: 24px; bottom: 22px;
+    position: absolute; z-index: 3; left: 26px; bottom: 26px;
     background: rgba(0,0,0,.6); color: #fff; border-radius: 999px; padding: 3px 10px;
     font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
   }
@@ -176,6 +176,7 @@
     margin-top: auto; text-align: center; font-size: 24px; font-weight: 700; line-height: 1.25;
     background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 20px; padding: 9px 12px;
   }
+  .counter b, #vDati .giallo, #vSem .verde, #ora { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
   .counter b { font-size: 30px; color: var(--yellow); }
   .screen.rosso .counter b, .screen.verde .counter b { color: #fff; }
   .counter.pop b { animation: pop .8s ease-out; display: inline-block; }
@@ -209,6 +210,10 @@
   .strada .nota { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.45; }
   .strada .nota b { color: var(--text); }
   .strada .scena { width: min(100%, calc(42vh * 600 / 440)); aspect-ratio: 600 / 440; align-self: center; display: block; border-radius: 20px; background: #222; box-shadow: 0 0 0 1px var(--line), 0 26px 60px -22px rgba(0,0,0,.9); }
+  .strada .scena { transition: box-shadow .3s; }
+  .strada:has(#cLed.on) .scena { box-shadow: 0 0 0 3px var(--yellow), 0 0 70px rgba(255,214,0,.35), 0 26px 60px -22px rgba(0,0,0,.9); }
+  #alone1, #alone2 { transform-box: fill-box; transform-origin: center; transform: scale(1.8); }
+  #sPedNome { font-size: 22px; }
   .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 10px 14px; transition: border-color .25s, background-color .25s, box-shadow .25s; }
   .card.wide { grid-column: 1 / -1; }
@@ -608,7 +613,7 @@ const PASSI = [
   { // 2. aspetta: l'auto passa, quasi-incidente evitato
     dura: 5200,
     entra() {
-      ui({ bg: "rosso", big: "✋<br>ASPETTA", enorme: true, sub: "Arriva un'auto.<br>Non fai in tempo." });
+      ui({ bg: "rosso", big: "✋<br>ASPETTA", enorme: true, sub: `Auto tra <b>${ARRIVO_AUTO_S} s</b>.<br>A te servono <b>${SERVONO_S} s</b>.<br>Non fai in tempo.` });
       parla("Aspetta. Arriva una macchina.");
       autoInCamera(-1);
       strada({ auto: "passa" });
@@ -649,7 +654,7 @@ const PASSI = [
   { // 6. vai: telefono lampeggia, lampeggiante e verde allungato
     dura: DURATA_ATTRAVERSAMENTO_MS + 300,
     entra() {
-      ui({ bg: "verde", big: "VAI ADESSO", enorme: true, sub: "Hai tutto il tempo.<br>💡 Ti vedono arrivare.", progress: true });
+      ui({ bg: "verde", big: "VAI ADESSO", enorme: true, sub: "Hai tutto il tempo.<br>Ti vedono arrivare.", progress: true });
       parla("Vai adesso. Hai tutto il tempo.");
       $("phone").classList.add("flash");
       const f = $("progressFill"); f.getBoundingClientRect();
