@@ -130,6 +130,10 @@
   .confronto .tu i { background: linear-gradient(90deg, #ffe45a, #ffd600); }
   .confronto .auto b { color: #fff; }
   .confronto .tu, .confronto .tu b { color: #000; }
+  .confronto.largo { font-size: 17px; gap: 6px; margin-bottom: 8px; }
+  .confronto.largo .riga { border-radius: 12px; padding: 5px 12px; border-width: 1px; }
+  .confronto.largo .riga span { white-space: normal; }
+  .confronto small { font-size: .82em; font-weight: 400; opacity: .9; }
   @keyframes riempi { from { transform: scaleX(0); } }
   @keyframes comparsa { from { opacity: 0; transform: translateY(14px) scale(.97); } }
   .screen.rosso .sub b { color: #fff; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
@@ -594,9 +598,10 @@ const PASSI = [
         $("sub").innerHTML = `<div class="confronto">` +
           `<div class="riga auto"><i style="width:${Math.round(100 * ARRIVO_AUTO_S / SERVONO_S)}%"></i><span>🚗 Auto tra <b>${ARRIVO_AUTO_S} s</b></span></div>` +
           `<div class="riga tu"><i></i><span>🚶 A te servono <b>${SERVONO_S} s</b></span></div></div>`;
-        decisione(`Auto in arrivo tra <span class="giallo">${ARRIVO_AUTO_S} s</span> (da quanto cresce nell'inquadratura) · ` +
-          `a Maria servono ${LARGHEZZA_M} m ÷ ${String(VELOCITA_MS).replace(".", ",")} m/s + ${MARGINE_S} s = ` +
-          `<span class="giallo">${SERVONO_S} s</span> → ${ARRIVO_AUTO_S} &lt; ${SERVONO_S}: <span class="rosso">ASPETTA</span>`);
+        decisione(`<div class="confronto largo">` +
+          `<div class="riga auto"><i style="width:${Math.round(100 * ARRIVO_AUTO_S / SERVONO_S)}%"></i><span>🚗 Auto in arrivo tra <b>${ARRIVO_AUTO_S} s</b> <small>(da quanto cresce nell'inquadratura)</small></span></div>` +
+          `<div class="riga tu"><i></i><span>🚶 A Maria servono <b>${SERVONO_S} s</b> <small>= ${LARGHEZZA_M} m ÷ ${String(VELOCITA_MS).replace(".", ",")} m/s + ${MARGINE_S} s di margine</small></span></div></div>` +
+          `${ARRIVO_AUTO_S} s &lt; ${SERVONO_S} s: non fa in tempo → <span class="rosso">ASPETTA</span>`);
       }, 1500);
     },
   },
